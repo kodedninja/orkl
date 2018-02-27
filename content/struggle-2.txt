@@ -1,9 +1,0 @@
-url: struggle-2
-----
-title: struggle #2
-----
-date: 2018-02-27
-----
-text: was that Dat's ctime is not reliable. it's fixed now.
-----
-ctime: 1519753324363

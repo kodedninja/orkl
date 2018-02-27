@@ -1,9 +1,0 @@
-url: struggle-1
-----
-title: struggle #1
-----
-date: 2018-02-27
-----
-text: was that textarea doesn't like new lines. it's fixed now.
-----
-ctime: 1519753293344
