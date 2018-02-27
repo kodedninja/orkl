@@ -1,7 +1,7 @@
 {
   "name": "orkl",
   "version": "0.1.0",
-  "description": "A blog platform based on Dat",
+  "description": "Super simple peer-to-peer blogging site",
   "main": "src/index.js",
   "scripts": {
     "start": "watchify src/index.js -o bundle.js"
