@@ -8,6 +8,8 @@ function view (state, emit) {
 	var entry = get_entry(state.params.entry)
 
 	if (entry) {
+		emit(state.events.DOMTITLECHANGE, entry.title + ' - ' + state.orkl.config.title)
+
 		return html`
 			<div>
 				<a class="dib mb1">${entry.title}</a>

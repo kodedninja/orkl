@@ -4,6 +4,8 @@ const wrapper = require('../components/wrapper')
 module.exports = wrapper(view)
 
 function view (state, emit) {
+	if (state.orkl.config.title) emit(state.events.DOMTITLECHANGE, state.orkl.config.title)
+
 	return html`
 		<div class="db c100">
 			${state.orkl.content.map(entry)}
