@@ -20,11 +20,17 @@ function view(body) {
 			if (!state.orkl) return null
 
 			if (state.route != '/new' && state.route != '/:entry/edit' && state.route != '/:entry' && state.orkl.dat.isOwner) return html`
-				<a href="/new" class="fr">new entry</a>
+				<div class="fr">
+					${publish_button()}
+					<a href="/new">new entry</a>
+				</div>
 			`
 
 			if (state.route == '/:entry' && state.orkl.dat.isOwner) return html`
-				<a href="${state.href + '/edit'}" class="fr">edit</a>
+				<div class="fr">
+					${publish_button()}
+					<a href="${state.href + '/edit'}" class="fr">edit</a>
+				</div>
 			`
 
 			if (state.route == '/new' || state.route == '/:entry/edit') return html`
@@ -32,6 +38,18 @@ function view(body) {
 			`
 
 			return null
+
+			function publish_button() {
+				if (state.orkl.dat.to_publish) return html`
+					<a href="/publish" class="mr1" onclick="${publish}">publish</a>
+				`
+				return null
+
+				function publish(e) {
+					e.preventDefault();
+					emit('publish')
+				}
+			}
 
 			function onsave(e) {
 				e.preventDefault()

@@ -25,9 +25,9 @@ function orkl () {
 		emitter.on('refresh', refresh)
 		emitter.on('saveContent', save)
 		emitter.on('delete', delete_entry)
+		emitter.on('publish', publish)
 
 		async function loaded() {
-
 			var config = await fs.readfile('/config.json')
 			state.orkl.config = JSON.parse(config)
 			state.orkl.dat = await archive.getInfo()
@@ -39,6 +39,8 @@ function orkl () {
 		}
 
 		async function refresh() {
+			state.orkl.dat.to_publish = (await archive.diff()).length != 0
+
 			state.orkl.content = []
 			try {
 				var dir = await fs.readdir(state.orkl.config.directory)
@@ -70,7 +72,6 @@ function orkl () {
 			data = smarkt.stringify(data)
 
 			await fs.writefile(state.orkl.config.directory + '/' + filename + '.txt', data)
-			await archive.commit()
 
 			emitter.emit('refresh')
 			emitter.emit('pushState', '/' + filename)
@@ -88,6 +89,12 @@ function orkl () {
 			await archive.commit()
 			emitter.emit('refresh')
 			emitter.emit('pushState', '/')
+		}
+
+		async function publish() {
+			await archive.commit()
+			state.orkl.dat.to_publish = false
+			emitter.emit('render')
 		}
 
 		function get_entry(e) {
