@@ -12,6 +12,7 @@ function view(body) {
 						${new_nav()}
 					</div>
 					${body(state, emit)}
+					<div class="db c100 p1"></div>
 				</div>
 			</main>
 		`
