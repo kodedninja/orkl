@@ -27,12 +27,14 @@ function orkl () {
 		emitter.on('delete', delete_entry)
 
 		async function loaded() {
-			if (state.orkl.dat.isOwner && state.route == '/new') emitter.emit('replaceState', '/')
 
 			var config = await fs.readfile('/config.json')
 			state.orkl.config = JSON.parse(config)
 			state.orkl.dat = await archive.getInfo()
 			state.orkl.config.title = state.orkl.config.title || state.orkl.dat.title
+
+			if (!state.orkl.dat.isOwner && (state.route == '/new' || state.route == '/:entry/edit')) emitter.emit('replaceState', '/')
+
 			await refresh()
 		}
 

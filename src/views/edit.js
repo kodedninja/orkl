@@ -8,7 +8,7 @@ module.exports = wrapper(view)
 function view (state, emit) {
 	var entry = get_entry(state.params.entry)
 
-	if (entry) {
+	if (state.orkl.dat.isOwner && entry) {
 		return html`
 			<div>
 				${form.hidden('url', entry.url)}
