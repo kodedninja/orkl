@@ -1,6 +1,7 @@
 const html = require('choo/html')
 const wrapper = require('../components/wrapper')
 const no_archive = require('./no_archive')
+const format = require('../components/format')
 
 module.exports = wrapper(view)
 
@@ -30,7 +31,7 @@ function view (state, emit) {
 		`
 
 		function excerpt(text) {
-			return text.substring(0, 200) + '...'
+			return text ? format(text.substring(0, text.indexOf('\n\n'))) : ''
 		}
 	}
 }
