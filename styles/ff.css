@@ -175,7 +175,7 @@ input, textarea {
 
 textarea {
 	resize: none;
-	height: 400px;
+	height: 60vh;
 }
 
 /* Media query customs */

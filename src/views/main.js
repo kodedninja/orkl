@@ -23,7 +23,7 @@ function view (state, emit) {
 	function entry(state) {
 		return html`
 			<a href="${state.url}" class="db nbb my2">
-				<a class="dib mb1">${state.title}</a>
+				<a class="dib mb0-5">${state.title}</a>
 				<div class="db">
 					${excerpt(state.text)}
 				</div>
@@ -31,7 +31,9 @@ function view (state, emit) {
 		`
 
 		function excerpt(text) {
-			return text ? format(text.substring(0, text.indexOf('\n\n'))) : ''
+			var end = text.indexOf('\n\n')
+			if (end == -1) end = Math.min(text.length, 300)
+			return text ? format(text.substring(0, end)) : ''
 		}
 	}
 }
