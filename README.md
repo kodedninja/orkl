@@ -7,13 +7,21 @@ I wanted to build a peer-to-peer only blog; kind of like the p2p child of Svbtle
 orkl is also 100% dynamic, so it's basically just a bunch of ```txt``` files (using [smarkt](https://github.com/jondashkyle/smarkt)) = no site generation or building.
 
 ## Usage
-Coming soon.
+The magic of Beaker Browser is the possibility to fork a site. To get started you can fork any orkl site, but for the sake of simplicity we will use an empty site I've made.
+
+- Download [Beaker Browser](https://beakerbrowser.com)
+- Navigate to [dat://orkl-kodedninja.hashbase.io](dat://orkl-kodedninja.hashbase.io)
+- Find the "Fork this site" button, click it and fill out with your information
+- Navigate to your site
+- Read the "How to use orkl?" entry
 
 ## Development
+Make a new site in Beaker then put the source code into it's directory. Run:
 ```
 npm install
 npm start
 ```
-To start watchify.
+to start the bundler.
+
 
 Thanks to [choo](https://choo.io), [Jon Kyle](https://jon-kyle.com) for Enoki and Dropout and the guys at Beaker.
