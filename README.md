@@ -24,4 +24,4 @@ npm start
 to start the bundler.
 
 
-Thanks to [choo](https://choo.io), [Jon Kyle](https://jon-kyle.com) for Enoki and Dropout and the guys at Beaker.
+Thanks to [choo](https://choo.io), [Jon Kyle](https://jon-kyle.com) (for Enoki and Dropout), [Rasmus](https://rsms.me) (for [Inter UI](https://rsms.me/inter)) and the guys at Beaker.
