@@ -86,7 +86,6 @@ function orkl () {
 
 		async function delete_entry(entry) {
 			await fs.unlink(state.orkl.config.directory + '/' + entry + '.txt')
-			await archive.commit()
 			emitter.emit('refresh')
 			emitter.emit('pushState', '/')
 		}
