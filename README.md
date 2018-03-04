@@ -16,6 +16,14 @@ The magic of Beaker Browser is the possibility to fork a site. To get started yo
 - Edit the site's dat.json, adding `"fallback_page": "index.html"`
 - Read the "How to use orkl?" entry
 
+### ```config.json```
+```
+{
+  "directory": <directory of the content - required>,
+  "title": <site title (overrides title in dat.json>
+}
+```
+
 ## Development
 Make a new site in Beaker then put the source code into it's directory. Run:
 ```
