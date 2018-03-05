@@ -4,6 +4,17 @@ const orkl = require('./orkl')
 const app = choo()
 
 app.use((state, emitter) => {
+	emitter.on('navigate', () => {
+		if (state.route == '/:entry' || state.route == '/:entry/edit') {
+			for (var id in state.orkl.content) {
+				if (state.orkl.content[id].url == state.params.entry) {
+					state.entry = state.orkl.content[id]
+				}
+			}
+		}
+	})
+})
+app.use((state, emitter) => {
 	state.public = false
 
 	emitter.on('change-public', (data) => {

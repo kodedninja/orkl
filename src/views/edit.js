@@ -6,16 +6,16 @@ const form = require('../components/form')
 module.exports = wrapper(view)
 
 function view (state, emit) {
-	var entry = get_entry(state.params.entry)
+	state.entry = get_entry(state.params.entry)
 
-	if (state.orkl.dat.isOwner && entry) {
+	if (state.orkl.dat.isOwner && state.entry) {
 		return html`
 			<div>
-				${form.hidden('url', entry.url)}
-				${form.hidden('ctime', entry.ctime)}
-				${form.input('title', 'title', entry.title)}
-				${form.input('date', 'date', entry.date)}
-				${form.textarea('text', 'text', entry.text)}
+				${form.hidden('url', state.entry.url)}
+				${form.hidden('ctime', state.entry.ctime)}
+				${form.input('title', 'title', state.entry.title)}
+				${form.input('date', 'date', state.entry.date)}
+				${form.textarea('text', 'text', state.entry.text)}
 			</div>
 		`
 	}

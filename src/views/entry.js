@@ -5,20 +5,20 @@ const format = require('../components/format')
 module.exports = wrapper(view)
 
 function view (state, emit) {
-	var entry = get_entry(state.params.entry)
+	state.entry = get_entry(state.params.entry)
 
-	if (entry) {
-		emit(state.events.DOMTITLECHANGE, entry.title + ' - ' + state.orkl.config.title)
+	if (state.entry) {
+		emit(state.events.DOMTITLECHANGE, state.entry.title + ' - ' + state.orkl.config.title)
 
 		return html`
 			<div>
-				<a class="dib mb1">${entry.title}</a>
+				<a class="dib mb1">${state.entry.title}</a>
 				<div class="db">
-					<span class="mr1 tcgrey">${entry.date}</span>
+					<span class="mr1 tcgrey">${state.entry.date}</span>
 					${modificators()}
 				</div>
 				<div class="db c100">
-					${format(entry.text)}
+					${format(state.entry.text)}
 				</div>
 			</div>
 		`
