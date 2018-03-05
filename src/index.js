@@ -6,7 +6,7 @@ const app = choo()
 app.use((state, emitter) => {
 	state.public = false
 
-	emitter.on('change-public', (data, change) => {
+	emitter.on('change-public', (data) => {
 		if (data) state.public = data
 		else state.public = !state.public
 

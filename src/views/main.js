@@ -11,7 +11,7 @@ function view (state, emit) {
 
 		return html`
 			<div class="db c100">
-				${state.orkl.content.map(entry)}
+				${state.orkl.content.filter((e) => e.public || (state.orkl.dat.isOwner && !e.public)).map(entry)}
 			</div>
 		`
 	} else {
