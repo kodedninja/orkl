@@ -9,6 +9,7 @@ app.use((state, emitter) => {
 			for (var id in state.orkl.content) {
 				if (state.orkl.content[id].url == state.params.entry) {
 					state.entry = state.orkl.content[id]
+					state.public = state.entry.public
 				}
 			}
 		}
