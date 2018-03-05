@@ -17,16 +17,16 @@ Navigate to the [homepage](/) of the site and click the "new entry" link at the 
 
 Welcome to the super simple editor. You can enter a title, specify a date and write beautiful text. That's all. To style your text you can use [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) a common [lightweight markup language with plain text formatting syntax](https://en.wikipedia.org/wiki/Markdown).
 
+#### Publishing
+
+I changed the old way of publishing to this one, because this way you can hide unfinished entries for visitors (in real, every entry is published, but hidden ones aren't featured on the index page). Next to the "save" button there's a new "public/hidden" button, which represents the current status of the entry. 
+
+It's not as safe as the old way, but it's more functional.
+
 ### Modifying entries
 If you navigate to one of the entries you can see that the at the top right corner there's an "edit" button. If you click on that it'll navigate you to the editor and you already know how to use that.
 
 You can also delete an entry with the red "delete" button. Pretty obvious.
-
-### Publishing
-If you know how Beaker works you know that the changes you make are only visible to you. In order to make them public you have to "commit" or "publish". That's why there's a "publish" button in the top right corner, that's only visible if you have unpublished changes.
-
-This way you can still save your progress, but they won't be visible to anyone else.
-
 
 That's all. I said it won't be complicated. You can delete this entry if you want and access it anytime [here](dat://orkl-kodedninja.hashbase.io/how-to-use-orkl).
 ----
