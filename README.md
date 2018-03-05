@@ -13,7 +13,16 @@ The magic of Beaker Browser is the possibility to fork a site. To get started yo
 - Navigate to [dat://orkl-kodedninja.hashbase.io](dat://orkl-kodedninja.hashbase.io)
 - Find the "Fork this site" button, click it and fill out with your information
 - Navigate to your site
+- Edit the site's dat.json, adding `"fallback_page": "index.html"`
 - Read the "How to use orkl?" entry
+
+### ```config.json```
+```
+{
+  "directory": <directory of the content - required>,
+  "title": <site title (overrides title in dat.json>
+}
+```
 
 ## Development
 Make a new site in Beaker then put the source code into it's directory. Run:
@@ -24,4 +33,4 @@ npm start
 to start the bundler.
 
 
-Thanks to [choo](https://choo.io), [Jon Kyle](https://jon-kyle.com) for Enoki and Dropout and the guys at Beaker.
+Thanks to [choo](https://choo.io), [Jon Kyle](https://jon-kyle.com) (for Enoki and Dropout), [Rasmus](https://rsms.me) (for [Inter UI](https://rsms.me/inter)) and the guys at Beaker.
