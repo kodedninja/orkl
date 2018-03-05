@@ -31,9 +31,12 @@ function view (state, emit) {
 		`
 
 		function excerpt(text) {
-			var end = text.indexOf('\n\n')
-			if (end == -1) end = Math.min(text.length, 300)
-			return text ? format(text.substring(0, end)) : ''
+			if (text) {
+				var end = text.indexOf('\n\n')
+				if (end == -1) end = Math.min(text.length, 300)
+				return text ? format(text.substring(0, end)) : ''
+			}
+			return null
 		}
 	}
 }

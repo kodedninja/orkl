@@ -3,6 +3,16 @@ const orkl = require('./orkl')
 
 const app = choo()
 
+app.use((state, emitter) => {
+	state.public = false
+
+	emitter.on('change-public', (data, change) => {
+		if (data) state.public = data
+		else state.public = !state.public
+
+		emitter.emit('render')
+	})
+})
 app.use(orkl())
 
 app.route('/', require('./views/main'))

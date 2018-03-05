@@ -7,8 +7,8 @@ module.exports = wrapper(view)
 
 function view (state, emit) {
 	var today = new Date()
-	today = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + today.getDate()
-	if (state.orkl.dat.isOwner) {	
+	today = today.getFullYear() + '-' + format_number(today.getMonth() + 1)  + '-' + format_number(today.getDate())
+	if (state.orkl.dat.isOwner) {
 		return html`
 			<div>
 				${form.input('title', 'title')}
@@ -16,5 +16,9 @@ function view (state, emit) {
 				${form.textarea('text', 'text')}
 			</div>
 		`
+	}
+
+	function format_number(a) {
+		return ('0' + a).slice(-2)
 	}
 }

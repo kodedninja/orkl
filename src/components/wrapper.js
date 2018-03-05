@@ -1,4 +1,5 @@
 const html = require('choo/html')
+const form = require('./form')
 
 module.exports = view
 
@@ -35,7 +36,12 @@ function view(body) {
 			`
 
 			if (state.route == '/new' || state.route == '/:entry/edit') return html`
-				<a href="/save" class="fr" onclick="${onsave}">save</a>
+				<div class="fr">
+					<div class="mr1 dib">
+						${form.select('public', 'public', 'hidden', emit, state)}
+					</div>
+					<a href="/save" onclick="${onsave}">save</a>
+				</div>
 			`
 
 			return null
@@ -66,6 +72,7 @@ function view(body) {
 				emit('saveContent', {
 					url: url,
 					title: title,
+					public: state.public,
 					date: document.getElementById('date').value.trim(),
 					text: document.getElementById('text').value.trim()
 				})
