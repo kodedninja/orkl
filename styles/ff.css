@@ -94,21 +94,22 @@ code {
 .fr { float: right; }
 .fn { float: none; }
 
-.c20 { width: 20%; }
-.c25 { width: 25%; }
-.c40 { width: 40%; }
-.c50 { width: 50%; }
-.c60 { width: 60%; }
-.c75 { width: 75%; }
-.c80 { width: 80%; }
-.c100 { width: 100%; }
-.c3rd { width: 33.3%; }
-.c23rd { width: 66.6%; }
-.cauto { width: auto; }
+/* https://github.com/CreoOne/x001F */
+.\31{width:100.000%}
+.\31 \2f 2{width:50.000%}
+.\31 \2f 3{width:33.333%}
+.\31 \2f 4{width:25.000%}
+.\31 \2f 5{width:20.000%}
+.\31 \2f 6{width:16.667%}
+.\32 \2f 3{width:66.667%}
+.\32 \2f 5{width:40.000%}
+.\33 \2f 4{width:75.000%}
+.\33 \2f 5{width:60.000%}
+.\34 \2f 5{width:80.000%}
+.\35 \2f 6{width:83.333%}
+.auto { width: auto; }
 
-.mw800 { max-width: 800px }
-.mw1000 { max-width: 1000px }
-.mw1200 { max-width: 1200px }
+.mw1400 { max-width: 1400px }
 
 .ba { border-style: solid; border-width: 1px; }
 .bt { border-top-style: solid; border-top-width: 1px; }
@@ -182,6 +183,7 @@ textarea {
 
 @media (max-width: 900px) {
 	.m-c100 { width: 100% }
+	.m-\31{width:100.000%}
 
     .p0-5 { padding: 0.5rem }
     .p1 { padding: 1rem }

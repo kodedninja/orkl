@@ -1,13 +1,16 @@
 const html = require('choo/html')
 const wrapper = require('../components/wrapper')
 const format = require('../components/format')
+const notfound = require('../components/notfound')
 
 module.exports = wrapper(view)
 
 function view (state, emit) {
-	state.entry = get_entry(state.params.entry)
+	if (state.orkl.content.length > 0) {
+		state.entry = get_entry(state.params.entry)
 
-	if (state.entry) {
+		if (state.entry == null) return notfound()
+
 		emit(state.events.DOMTITLECHANGE, state.entry.title + ' - ' + state.orkl.config.title)
 
 		return html`
@@ -17,7 +20,7 @@ function view (state, emit) {
 					<span class="mr1 tcgrey">${state.entry.date}</span>
 					${modificators()}
 				</div>
-				<div class="db c100">
+				<div class="db 1">
 					${format(state.entry.text)}
 				</div>
 			</div>

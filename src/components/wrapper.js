@@ -6,14 +6,14 @@ module.exports = view
 function view(body) {
 	return function(state, emit) {
 		return html`
-			<main class="p1 c100 db">
-				<div class="db c23rd m-c100 mxa">
+			<main class="p2 1 db mxa mw1400">
+				<div class="db 2/3 m-1 mxa">
 					<div class="db mb2">
 						<a href="/" class="nbb">${state.orkl.config ? state.orkl.config.title : ''}</a>
 						${new_nav()}
 					</div>
 					${body(state, emit)}
-					<div class="db c100 p1"></div>
+					<div class="db 1 p1"></div>
 				</div>
 			</main>
 		`

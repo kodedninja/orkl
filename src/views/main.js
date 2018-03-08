@@ -10,7 +10,7 @@ function view (state, emit) {
 		if (state.orkl.config.title) emit(state.events.DOMTITLECHANGE, state.orkl.config.title)
 
 		return html`
-			<div class="db c100">
+			<div class="db 1">
 				${state.orkl.content.filter((e) => e.public || (state.orkl.dat.isOwner && !e.public)).map(entry)}
 			</div>
 		`
