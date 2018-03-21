@@ -1,5 +1,6 @@
 // the Dat part
 const smarkt = require('smarkt')
+const xhr = require('xhr')
 
 module.exports = orkl
 
@@ -15,6 +16,7 @@ function orkl () {
 		var fs = makeDatFs(archive)
 
 		state.events = state.events || { }
+		state.export_content = false
 		state.orkl = {
 			config: {},
 			content: [],
@@ -27,6 +29,11 @@ function orkl () {
 		emitter.on('delete', delete_entry)
 
 		async function loaded() {
+			if (DatArchive != undefined) await load_dat()
+			else load_http()
+		}
+
+		async function load_dat() {
 			var config = await fs.readfile('/config.json')
 			state.orkl.config = JSON.parse(config)
 			state.orkl.dat = await archive.getInfo()
@@ -54,7 +61,10 @@ function orkl () {
 						return b.date > a.date
 					})
 
-					if (id === dir.length - 1) emitter.emit(state.events.RENDER)
+					if (id === dir.length - 1) {
+						if (state.export_content) write_export()
+						emitter.emit(state.events.RENDER)
+					}
 				})
 			} catch (err) {
 				await fs.mkdir(state.orkl.config.directory)
@@ -62,19 +72,41 @@ function orkl () {
 			}
 		}
 
+		async function load_http() {
+			return new Promise(function (resolve, reject) {
+				var bust = Math.floor(Date.now() / 1000)
+				xhr('/content.json?' + bust, function (err, res) {
+					try {
+						var http_data = JSON.parse(res.body)
+						state.orkl.dat = {isOwner: false}
+						state.orkl.config = http_data.config
+						state.orkl.content = http_data.content
+
+						emitter.emit(state.events.RENDER)
+						resolve()
+					} catch (err) {
+						reject(err)
+					}
+				})
+			})
+		}
+
 		async function save(data) {
 			var filename = data.url || sanitize(data.title)
-			if (!data.url) data.ctime = new Date().getTime()
-			else {
+			if (!data.url) {
+				data.ctime = new Date().getTime()
+				data.url = filename
+			} else {
 				data.ctime = get_entry(data.url).ctime
 			}
-			data = smarkt.stringify(data)
 
-			await fs.writefile(state.orkl.config.directory + '/' + filename + '.txt', data)
-			await archive.commit()
+			await fs.writefile(state.orkl.config.directory + '/' + filename + '.txt', smarkt.stringify(data))
 
+			state.export_content = true
 			emitter.emit('refresh')
+
 			emitter.emit('pushState', '/' + filename)
+			await archive.commit()
 
 			function sanitize(str) {
 				return str
@@ -86,14 +118,35 @@ function orkl () {
 
 		async function delete_entry(entry) {
 			await fs.unlink(state.orkl.config.directory + '/' + entry + '.txt')
-			await archive.commit()
+			state.orkl.content.splice(get_entry_index(entry), 1)
+
+			state.export_content = true
 			emitter.emit('refresh')
 			emitter.emit('pushState', '/')
+
+			await archive.commit()
+		}
+
+		async function write_export() {
+			var http_data = {}
+			http_data.content = state.orkl.content
+			http_data.config = state.orkl.config
+
+			state.export_content =  false
+
+			await fs.writefile('/content.json', JSON.stringify(http_data, null, '\t'))
 		}
 
 		function get_entry(e) {
 			for (var id in state.orkl.content) {
 				if (state.orkl.content[id].url == e) return state.orkl.content[id]
+			}
+			return null
+		}
+
+		function get_entry_index(e) {
+			for (var id in state.orkl.content) {
+				if (state.orkl.content[id].url == e) return id
 			}
 			return null
 		}
