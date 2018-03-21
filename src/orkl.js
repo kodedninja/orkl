@@ -31,7 +31,9 @@ function orkl () {
 
 		async function loaded() {
 			if (state.p2p) await load_dat()
-			else await load_http()
+			else load_http().catch(function() {
+				return no_archive()
+			})
 		}
 
 		async function load_dat() {
