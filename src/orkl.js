@@ -6,14 +6,15 @@ module.exports = orkl
 
 function orkl () {
 	return function plugin(state, emitter) {
-
 		try {
 			var archive = new DatArchive(window.location.origin + '/')
+			var fs = makeDatFs(archive)
+			state.p2p = true
 		} catch (err) {
-			return no_archive()
+			//return no_archive()
+			state.p2p = false
 		}
 
-		var fs = makeDatFs(archive)
 
 		state.events = state.events || { }
 		state.export_content = false
@@ -29,8 +30,8 @@ function orkl () {
 		emitter.on('delete', delete_entry)
 
 		async function loaded() {
-			if (DatArchive != undefined) await load_dat()
-			else load_http()
+			if (state.p2p) await load_dat()
+			else await load_http()
 		}
 
 		async function load_dat() {
