@@ -20,6 +20,7 @@
     "choo": "^6.6.1",
     "forkup": "^0.1.1",
     "markdown-it": "^8.4.1",
+    "nanocomponent": "^6.5.1",
     "smarkt": "0.0.1",
     "watchify": "^3.9.0",
     "xhr": "^2.4.1"

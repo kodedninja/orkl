@@ -5,6 +5,11 @@ const form = require('../components/form')
 
 module.exports = wrapper(view)
 
+const title = new form.input('title', 'title')
+const date = new form.input('date', 'date')
+
+const text = new form.textarea('text', 'text')
+
 function view (state, emit) {
 	state.entry = get_entry(state.params.entry)
 
@@ -13,9 +18,9 @@ function view (state, emit) {
 			<div>
 				${form.hidden('url', state.entry.url)}
 				${form.hidden('ctime', state.entry.ctime)}
-				${form.input('title', 'title', state.entry.title)}
-				${form.input('date', 'date', state.entry.date)}
-				${form.textarea('text', 'text', state.entry.text)}
+				${title.render(state.entry.title)}
+				${date.render(state.entry.date)}
+				${text.render(state.entry.text)}
 			</div>
 		`
 	}

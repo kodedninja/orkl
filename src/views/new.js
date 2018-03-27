@@ -5,20 +5,27 @@ const form = require('../components/form')
 
 module.exports = wrapper(view)
 
+var today = new Date()
+today = today.getFullYear() + '-' + format_number(today.getMonth() + 1)  + '-' + format_number(today.getDate())
+
+const title = new form.input('title', 'title')
+const date = new form.input('date', 'date', today)
+
+const text = new form.textarea('text', 'text')
+
 function view (state, emit) {
-	var today = new Date()
-	today = today.getFullYear() + '-' + format_number(today.getMonth() + 1)  + '-' + format_number(today.getDate())
+
 	if (state.orkl.dat.isOwner) {
 		return html`
 			<div>
-				${form.input('title', 'title')}
-				${form.input('date', 'date', today)}
-				${form.textarea('text', 'text')}
+				${title.render()}
+				${date.render()}
+				${text.render()}
 			</div>
 		`
 	}
+}
 
-	function format_number(a) {
-		return ('0' + a).slice(-2)
-	}
+function format_number(a) {
+	return ('0' + a).slice(-2)
 }

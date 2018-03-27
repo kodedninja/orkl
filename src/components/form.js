@@ -2,18 +2,8 @@ const html = require('choo/html')
 const format = require('../components/format')
 
 module.exports = {
-	input: function(name, placeholder, value) {
-		return html`
-			<input type="text" id="${name}" name="${name}" placeholder="${placeholder ? placeholder : ''}" class="bn 1 mb1 f5 ffi" value="${value ? value : ''}">
-		`
-	},
-	textarea: function(name, placeholder, value) {
-		var ta = html`
-			<textarea name="${name}" id="${name}" placeholder="${placeholder ? placeholder : ''}" class="ffi db 1 bn f5"></textarea>
-		`
-		ta.value = value || ''
-		return ta
-	},
+	input: require('./input'),
+	textarea: require('./textarea'),
 	select: function(name, t, f, emit, state) {
 		return html`
 			<a href="#" onclick=${click} class="${!state.public ? 'tcgrey' : ''}">${state.public ? t : f}</a>
