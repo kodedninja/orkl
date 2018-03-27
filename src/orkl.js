@@ -48,8 +48,6 @@ function orkl () {
 		}
 
 		async function refresh() {
-			state.orkl.dat.to_publish = (await archive.diff()).length != 0
-
 			state.orkl.content = []
 			try {
 				var dir = await fs.readdir(state.orkl.config.directory)
