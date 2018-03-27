@@ -29,5 +29,10 @@ If you navigate to one of the entries you can see that the at the top right corn
 You can also delete an entry with the red "delete" button. Pretty obvious.
 
 That's all. I said it won't be complicated. You can delete this entry if you want and access it anytime [here](dat://orkl-kodedninja.hashbase.io/how-to-use-orkl).
+
+---
+
+### Updating
+I've included my module ```forkup``` to orkl, so you can update your fork if there's a new version on the main site. Go to *dat://[yoursite]/update* to download new files.
 ----
 ctime: 1519762529663
