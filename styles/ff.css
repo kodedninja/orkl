@@ -34,9 +34,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: inherit; }
 h1, .f1 { font-size: 3rem; }
 h2, .f2 { font-size: 2.25rem; }
 h3, .f3 { font-size: 1.5rem; }
-.f4 { font-size: 1.25rem; }
-.f5 { font-size: 1rem; }
-.f6 { font-size: .875rem; }
+h4, .f4 { font-size: 1.25rem; }
+h5, .f5 { font-size: 1rem; }
+h6, .f6 { font-size: .875rem; }
 
 .i { font-style: italic; }
 .b { font-weight: bold; }
@@ -47,8 +47,6 @@ h3, .f3 { font-size: 1.5rem; }
 .tac { text-align: center }
 
 .ffi { font-family: 'Inter UI', helvetica, sans-serif; }
-.ffss { font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif; }
-.ffh { font-family: 'helvetica neue', helvetica, sans-serif; }
 .ffmono { font-family: monospace }
 
 .fwb { font-weight: bold; }
@@ -119,12 +117,6 @@ code {
 .bn { border-style: none; border-width: 0; }
 
 .br0 { border-radius: 0; }
-.br1 { border-radius: .125rem; }
-.br2 { border-radius: .25rem; }
-.br3 { border-radius: .5rem; }
-.br4 { border-radius: 1rem; }
-.br100 { border-radius: 100%; }
-.brpill { border-radius: 9999px; }
 
 .p0-5 { padding: 0.75rem }
 .p1 { padding: 1.5rem }
@@ -181,7 +173,6 @@ textarea {
 /* Media query customs */
 
 @media (max-width: 900px) {
-	.m-c100 { width: 100% }
 	.m-\31{width:100.000%}
 
     .p0-5 { padding: 0.5rem }
