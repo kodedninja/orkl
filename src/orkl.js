@@ -52,6 +52,11 @@ function orkl () {
 			try {
 				var dir = await fs.readdir(state.orkl.config.directory)
 
+				if (dir.length == 0) {
+					emitter.emit(state.events.RENDER)
+					return
+				}
+
 				dir.forEach(async function(file, id) {
 					var content = await fs.readfile(state.orkl.config.directory + '/' + file)
 					content = smarkt.parse(content)
