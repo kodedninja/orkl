@@ -18,6 +18,6 @@ module.exports = class Input extends Nanocomponent {
 	}
 
 	update(value) {
-		return this.value !== value
+		return false
 	}
 }

@@ -16,11 +16,11 @@ module.exports = class Textarea extends Nanocomponent {
 			<textarea name="${this.name}" id="${this.name}" placeholder="${this.placeholder}" class="ffi db 1 bn f5"></textarea>
 		`
 		ta.value = this.value || ''
-		
+
 		return ta
 	}
 
 	update(value) {
-		return this.value !== value
+		return false
 	}
 }
