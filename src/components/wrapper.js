@@ -47,21 +47,9 @@ function view(body) {
 			function onsave(e) {
 				e.preventDefault()
 
-				var title = document.getElementById('title').value.trim()
+				if (state.orkl.current.title == '') return;
 
-				if (title == '') return;
-
-				var url = document.getElementById('url')
-				if (url) url = url.value
-				else url = undefined
-
-				emit('saveContent', {
-					url: url,
-					title: title,
-					public: state.public,
-					date: document.getElementById('date').value.trim(),
-					text: document.getElementById('text').value.trim()
-				})
+				emit('saveContent')
 			}
 		}
 	}

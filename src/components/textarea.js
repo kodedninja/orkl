@@ -11,9 +11,10 @@ module.exports = class Textarea extends Nanocomponent {
 		this.value = value || ''
 	}
 
-	createElement(value, focus) {
+	createElement(state, value, focus) {
 		const t = this
 		if (value) this.value = value
+		state.orkl.current[this.name] = this.value
 
 		var el = html`
 			<textarea name="${this.name}" id="${this.name}" placeholder="${this.placeholder}" class="ffi db 1 bn f5" onkeydown="${key}"></textarea>
@@ -24,6 +25,9 @@ module.exports = class Textarea extends Nanocomponent {
 		return el
 
 		function key(e) {
+			t.value = this.value
+			state.orkl.current[t.name] = this.value
+
 			if (t.element.offsetHeight < t.element.scrollHeight) {
 				t.element.style.height = t.element.scrollHeight + 'px'
 			}

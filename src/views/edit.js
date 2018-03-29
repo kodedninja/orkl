@@ -14,13 +14,14 @@ function view (state, emit) {
 	state.entry = get_entry(state.params.entry)
 
 	if (state.orkl.dat.isOwner && state.entry) {
+		state.orkl.current.url = state.entry.url
+		state.orkl.current.ctime = state.entry.ctime
+
 		return html`
 			<div>
-				${form.hidden('url', state.entry.url)}
-				${form.hidden('ctime', state.entry.ctime)}
-				${title.render(state.entry.title)}
-				${date.render(state.entry.date)}
-				${text.render(state.entry.text, true)}
+				${title.render(state, state.entry.title)}
+				${date.render(state, state.entry.date)}
+				${text.render(state, state.entry.text, true)}
 			</div>
 		`
 	}

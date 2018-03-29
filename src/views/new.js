@@ -14,13 +14,15 @@ const date = new form.input('date', 'date', today)
 const text = new form.textarea('text', 'text')
 
 function view (state, emit) {
-
 	if (state.orkl.dat.isOwner) {
+		state.orkl.current.ctime = null
+		state.orkl.current.url = null
+
 		return html`
 			<div>
-				${title.render(null, true)}
-				${date.render()}
-				${text.render()}
+				${title.render(state, null, true)}
+				${date.render(state)}
+				${text.render(state)}
 			</div>
 		`
 	}

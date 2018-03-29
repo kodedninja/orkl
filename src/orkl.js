@@ -21,7 +21,13 @@ function orkl () {
 		state.orkl = {
 			config: {},
 			content: [],
-			dat: {}
+			dat: {},
+			current: {
+				title: null,
+				date: null,
+				text: null,
+				url: null
+			}
 		}
 
 		emitter.on(state.events.DOMCONTENTLOADED, loaded)
@@ -98,12 +104,19 @@ function orkl () {
 		}
 
 		async function save(data) {
-			var filename = data.url || sanitize(data.title)
+			var filename = state.orkl.current.url || sanitize(state.orkl.current.title)
+
+			var data = {
+				title: state.orkl.current.title,
+				date: state.orkl.current.date,
+				url: state.orkl.current.url,
+				public: state.public,
+				ctime: state.orkl.current.ctime || new Date().getTime(),
+				text: state.orkl.current.text
+			}
+
 			if (!data.url) {
-				data.ctime = new Date().getTime()
 				data.url = filename
-			} else {
-				data.ctime = get_entry(data.url).ctime
 			}
 
 			await fs.writefile(state.orkl.config.directory + '/' + filename + '.txt', smarkt.stringify(data))

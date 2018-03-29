@@ -11,12 +11,19 @@ module.exports = class Input extends Nanocomponent {
 		this.value = value || ''
 	}
 
-	createElement(value, focus) {
+	createElement(state, value, focus) {
+		const t = this
 		if (value) this.value = value
+		state.orkl.current[this.name] = this.value
 
 		const el = html`
-			<input type="text" id="${this.name}" name="${this.name}" placeholder="${this.placeholder}" class="bn 1 mb1 f5 ffi" value="${this.value}">
+			<input type="text" id="${this.name}" name="${this.name}" placeholder="${this.placeholder}" class="bn 1 mb1 f5 ffi" value="${this.value}" onkeydown="${key}">
 		`
+
+		function key(e) {
+			t.value = this.value
+			state.orkl.current[t.name] = this.value
+		}
 
 		if (focus) return autofocus(el)
 		return el
