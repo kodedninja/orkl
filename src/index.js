@@ -6,25 +6,8 @@ const update = require('forkup')
 const app = choo()
 
 app.use((state, emitter) => {
-	emitter.on('navigate', () => {
-		if (state.route == '/:entry' || state.route == '/:entry/edit') {
-			for (var id in state.orkl.content) {
-				if (state.orkl.content[id].url == state.params.entry) {
-					state.entry = state.orkl.content[id]
-					state.public = state.entry.public
-				}
-			}
-		}
-	})
-})
-app.use((state, emitter) => {
-	state.public = false
-
-	emitter.on('change-public', (data) => {
-		if (data) state.public = data
-		else state.public = !state.public
-
-		emitter.emit('render')
+	emitter.on(state.events.RENDER, () => {
+		if (state.selectbus) state.selectbus.emit('public:changed')
 	})
 })
 app.use(orkl())

@@ -21,7 +21,7 @@ Welcome to the super simple editor. You can enter a title, specify a date and wr
 
 #### Publishing
 
-I changed the old way of publishing to this one, because this way you can hide unfinished entries for visitors (in real, every entry is published, but hidden ones aren't featured on the index page). Next to the "save" button there's a new "public/hidden" button, which represents the current status of the entry.
+I changed the old way of publishing to this one, because this way you can hide unfinished entries for visitors (in real, every entry is published, but hidden ones aren't featured on the index page). Next to the "save" button there's a new "public/hidden" button, which represents the current status of the entry. 
 
 It's not as safe as the old way, but it's more functional.
 

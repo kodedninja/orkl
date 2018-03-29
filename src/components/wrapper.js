@@ -35,9 +35,6 @@ function view(body) {
 
 			if (state.route == '/new' || state.route == '/:entry/edit') return html`
 				<div class="fr">
-					<div class="mr1 dib">
-						${form.select('public', 'public', 'hidden', emit, state)}
-					</div>
 					<a href="/save" onclick="${onsave}">save</a>
 				</div>
 			`

@@ -26,7 +26,9 @@ function orkl () {
 				title: null,
 				date: null,
 				text: null,
-				url: null
+				url: null,
+				public: null,
+				ctime: null
 			}
 		}
 
@@ -110,7 +112,7 @@ function orkl () {
 				title: state.orkl.current.title,
 				date: state.orkl.current.date,
 				url: state.orkl.current.url,
-				public: state.public,
+				public: state.orkl.current.public,
 				ctime: state.orkl.current.ctime || new Date().getTime(),
 				text: state.orkl.current.text
 			}
