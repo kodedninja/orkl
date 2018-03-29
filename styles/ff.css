@@ -176,6 +176,30 @@ textarea {
 	height: 60vh;
 }
 
+.loading {
+  margin: -1rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border: 3px solid #fff;
+  border-top: 3px solid #000;
+  border-left: 3px solid #000;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(360deg) }
+}
+/* Media query customs */
+@media (max-width: 900px) {
+	.sector {
+		width: 50% !important;
+	}
+}
+
 /* Media query customs */
 
 @media (max-width: 900px) {

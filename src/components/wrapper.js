@@ -5,6 +5,8 @@ module.exports = view
 
 function view(body) {
 	return function(state, emit) {
+		if (!state.loaded) return html`<main><div class="loading"></div></main>`
+
 		return html`
 			<main class="p2 1 db mxa mw1400">
 				<div class="db 2/3 m-1 mxa">

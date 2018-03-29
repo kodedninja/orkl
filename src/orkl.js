@@ -15,6 +15,7 @@ function orkl () {
 		}
 
 		state.events = state.events || { }
+		state.loaded = false
 		state.export_content = false
 		state.title_required = false
 		state.orkl = {
@@ -80,11 +81,15 @@ function orkl () {
 
 					if (id === dir.length - 1) {
 						if (state.export_content) write_export()
+						state.loaded = true
 						emitter.emit(state.events.RENDER)
 					}
 				})
 			} catch (err) {
 				await fs.mkdir(state.orkl.config.directory)
+
+				state.loaded = true
+
         		emitter.emit(state.events.RENDER)
 			}
 		}
@@ -98,6 +103,8 @@ function orkl () {
 						state.orkl.dat = {isOwner: false}
 						state.orkl.config = http_data.config
 						state.orkl.content = http_data.content
+
+						state.loaded = true
 
 						emitter.emit(state.events.RENDER)
 						resolve()
@@ -125,7 +132,7 @@ function orkl () {
 			if (!data.url) {
 				// no same title
 				await precheck()
-				
+
 				data.url = filename
 			}
 
