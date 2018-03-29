@@ -122,6 +122,9 @@ function orkl () {
 				text: state.orkl.current.text
 			}
 
+			// no same title
+			await precheck()
+
 			if (!data.url) {
 				data.url = filename
 			}
@@ -140,6 +143,15 @@ function orkl () {
 					.toLowerCase()
 					.replace(/\s+/g, '-')
 				    .replace(/[.,\/#!@?$%\^&\*;:{}=\_`~()\'\"]/g, '')
+			}
+
+			async function precheck() {
+				try {
+					var a = await fs.readfile(state.orkl.config.directory + '/' + filename + '.txt')
+					filename += '-' + (new Date().getTime()%10000)
+					
+					await precheck() // hopefully this will never happen
+				} catch (e) {}
 			}
 		}
 
