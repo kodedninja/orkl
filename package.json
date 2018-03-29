@@ -4,7 +4,8 @@
   "description": "Super simple peer-to-peer blogging site",
   "main": "src/index.js",
   "scripts": {
-    "start": "watchify src/index.js -o bundle.js"
+    "start": "watchify src/index.js -o bundle.js",
+	"build": "browserify src/index.js -o bundle.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/kodedninja/orkl#readme",
   "dependencies": {
+    "browserify": "^16.1.1",
     "choo": "^6.6.1",
     "dom-autofocus": "^1.0.1",
     "forkup": "^0.1.1",
