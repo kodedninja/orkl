@@ -26,7 +26,7 @@ function view (state, emit) {
 			<div class="1">
 				<div class="mb1 1">
 					<span class="tcred f6">${state.title_required ? 'required' : ''}</span>
-					${title.render(state)}
+					${title.render(state, '', true)}
 				</div>
 				<div class="1/2 dib">
 					${date.render(state)}
@@ -35,7 +35,7 @@ function view (state, emit) {
 					${select.render(state, emit)}
 				</div>
 				<hr />
-				${text.render(state)}
+				${text.render(state, '')}
 			</div>
 		`
 	}

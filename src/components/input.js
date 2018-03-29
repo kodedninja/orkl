@@ -17,7 +17,7 @@ module.exports = class Input extends Nanocomponent {
 		state.orkl.current[this.name] = this.value
 
 		const el = html`
-			<input type="text" id="${this.name}" name="${this.name}" placeholder="${this.placeholder}" class="bn 1 f5 ffi" value="${this.value}" onkeydown="${key}">
+			<input type="text" id="${this.name}" name="${this.name}" placeholder="${this.placeholder}" class="bn 1 f5 ffi" value="${this.value}" onkeyup="${key}">
 		`
 
 		function key(e) {

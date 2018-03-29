@@ -17,9 +17,9 @@ module.exports = class Textarea extends Nanocomponent {
 		state.orkl.current[this.name] = this.value
 
 		var el = html`
-			<textarea name="${this.name}" id="${this.name}" placeholder="${this.placeholder}" class="ffi db 1 bn f5" onkeydown="${key}"></textarea>
+			<textarea name="${this.name}" id="${this.name}" placeholder="${this.placeholder}" class="ffi db 1 bn f5" onkeyup="${key}"></textarea>
 		`
-		el.value = this.value || ''
+		el.value = this.value
 
 		if (focus) return autofocus(el)
 		return el

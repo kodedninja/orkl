@@ -129,6 +129,7 @@ function orkl () {
 			await fs.writefile(state.orkl.config.directory + '/' + filename + '.txt', smarkt.stringify(data))
 
 			state.export_content = true
+
 			emitter.emit('refresh')
 
 			emitter.emit('pushState', '/' + filename)
