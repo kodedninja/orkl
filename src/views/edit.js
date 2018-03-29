@@ -20,7 +20,7 @@ function view (state, emit) {
 				${form.hidden('ctime', state.entry.ctime)}
 				${title.render(state.entry.title)}
 				${date.render(state.entry.date)}
-				${text.render(state.entry.text)}
+				${text.render(state.entry.text, true)}
 			</div>
 		`
 	}

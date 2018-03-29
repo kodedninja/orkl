@@ -18,7 +18,7 @@ function view (state, emit) {
 	if (state.orkl.dat.isOwner) {
 		return html`
 			<div>
-				${title.render()}
+				${title.render(null, true)}
 				${date.render()}
 				${text.render()}
 			</div>

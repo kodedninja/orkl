@@ -1,5 +1,6 @@
 const Nanocomponent = require('nanocomponent')
 const html = require('choo/html')
+const autofocus = require('dom-autofocus')
 
 module.exports = class Textarea extends Nanocomponent {
 	constructor(name, placeholder, value) {
@@ -10,14 +11,16 @@ module.exports = class Textarea extends Nanocomponent {
 		this.value = value || ''
 	}
 
-	createElement(value) {
+	createElement(value, focus) {
 		if (value) this.value = value
-		var ta = html`
+
+		var el = html`
 			<textarea name="${this.name}" id="${this.name}" placeholder="${this.placeholder}" class="ffi db 1 bn f5"></textarea>
 		`
-		ta.value = this.value || ''
+		el.value = this.value || ''
 
-		return ta
+		if (focus) return autofocus(el)
+		return el
 	}
 
 	update(value) {
