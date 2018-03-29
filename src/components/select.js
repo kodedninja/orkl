@@ -27,7 +27,6 @@ module.exports = class Select extends Nanocomponent {
 	}
 
 	update() {
-		console.log('up')
-		return true
+		return false
 	}
 }

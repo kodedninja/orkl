@@ -44,7 +44,10 @@ function view(body) {
 			function onsave(e) {
 				e.preventDefault()
 
-				if (state.orkl.current.title == '') return;
+				if (state.orkl.current.title == '') {
+					emit('noTitle')
+					return
+				}
 
 				emit('saveContent')
 			}

@@ -25,6 +25,7 @@ function view (state, emit) {
 		return html`
 			<div class="1">
 				<div class="mb1 1">
+					<span class="tcred f6">${state.title_required ? 'required' : ''}</span>
 					${title.render(state)}
 				</div>
 				<div class="1/2 dib">

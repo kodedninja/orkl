@@ -11,13 +11,12 @@ function orkl () {
 			var fs = makeDatFs(archive)
 			state.p2p = true
 		} catch (err) {
-			//return no_archive()
 			state.p2p = false
 		}
 
-
 		state.events = state.events || { }
 		state.export_content = false
+		state.title_required = false
 		state.orkl = {
 			config: {},
 			content: [],
@@ -32,10 +31,14 @@ function orkl () {
 			}
 		}
 
+		emitter.on('navigation', () => {
+			state.title_required = false
+		})
 		emitter.on(state.events.DOMCONTENTLOADED, loaded)
 		emitter.on('refresh', refresh)
 		emitter.on('saveContent', save)
 		emitter.on('delete', delete_entry)
+		emitter.on('noTitle', no_title)
 
 		async function loaded() {
 			if (state.p2p) await load_dat()
@@ -106,6 +109,8 @@ function orkl () {
 		}
 
 		async function save(data) {
+			state.title_required = false
+
 			var filename = state.orkl.current.url || sanitize(state.orkl.current.title)
 
 			var data = {
@@ -146,6 +151,11 @@ function orkl () {
 			emitter.emit('pushState', '/')
 
 			await archive.commit()
+		}
+
+		function no_title() {
+			state.title_required = true
+			emitter.emit('render')
 		}
 
 		async function write_export() {
