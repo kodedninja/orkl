@@ -12,7 +12,7 @@ function view (state, emit) {
 	if (state.orkl.content.length > 0) {
 		state.entry = get_entry(state.params.entry)
 
-		if (state.entry == null) return notfound()
+		if (state.entry == null || (state.entry.public == false && !state.orkl.dat.isOwner)) return notfound()
 
 		emit(state.events.DOMTITLECHANGE, state.entry.title + ' - ' + state.orkl.config.title)
 
