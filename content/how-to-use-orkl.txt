@@ -15,18 +15,18 @@ If you haven't done it already, this is an important step. Open the ```dat.json`
 Orkl is now ready to use.
 
 ### Writing a new entry
-Navigate to the [homepage](/) of the site and click the "new entry" link at the top right corner.
+Navigate to the [homepage](/) of the site and click the [new entry](/new) button at the top right corner.
 
-Welcome to the simple editor. You can enter a title, specify a date and write beautiful text. That's all. To style your text you can use [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) a common [lightweight markup language with plain text formatting syntax](https://en.wikipedia.org/wiki/Markdown).
+Welcome to the editor. You can enter a title, specify a date and write beautiful text. That's all. To style your text content you can use [Markdown](https://daringfireball.net/projects/markdown/) ([cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)), a common "lightweight markup language with plain text formatting syntax" ^2^.
 
 #### Publishing
 
-Next to the "save" button there's a new "visible/not visible" button, which represents the current status of the entry. Not visible entries can only be seen by you.
+Next to the date field there's a new "visible/not visible" button, which represents the current status of the entry. Not visible entries can only be seen by you.
 
 ### Modifying entries
-If you navigate to one of the entries you can see that the at the top right corner there's an "edit" button. If you click on that it'll navigate you to the editor and you already know how to use that.
+If you navigate to one of the entries you can see that at the top right corner there's an "edit" button. If you click on that it'll navigate you to the editor and you already know how to use that.
 
-You can also delete an entry with the red "delete" button. Pretty obvious. You have to press it twice!
+You can also delete an entry with the red "delete" button. Pretty obvious. You have to click it twice!
 
 ### Updating
 I've included my module ```forkup``` so you can update your fork if there's a new version on the main site. You only have to navigate to ```dat://[yoursite]/update``` and then reload the page and everything will be updated.
@@ -39,3 +39,4 @@ That's all. I said it won't be complicated. You can delete this entry if you wan
 
 ---
 1. Since **Beaker 0.8 prerelease.1** this is not needed!
+2. According to [Wikipedia](https://en.wikipedia.org/wiki/Markdown)

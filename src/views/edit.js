@@ -27,6 +27,7 @@ function view (state, emit) {
 					${title.render(state, state.entry.title)}
 				</div>
 				<div class="1/2 dib">
+					<span class="tcred f6">${state.date_required ? 'required' : ''}</span>
 					${date.render(state, state.entry.date)}
 				</div>
 				<div class="1/2 dib">

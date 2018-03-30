@@ -9,6 +9,11 @@ app.use((state, emitter) => {
 	emitter.on(state.events.RENDER, () => {
 		if (state.selectbus) state.selectbus.emit('public:changed')
 	})
+
+	emitter.on('navigate', () => {
+		state.title_required = false
+		state.date_required = false
+	})
 })
 app.use(orkl())
 
