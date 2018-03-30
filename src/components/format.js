@@ -2,6 +2,8 @@ var html = require('choo/html')
 var MarkdownIt = require('markdown-it')
 var md = new MarkdownIt()
 
+md.use(require('markdown-it-sup'))
+
 module.exports = format
 
 function format (str) {
