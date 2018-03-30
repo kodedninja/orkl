@@ -20,7 +20,7 @@ function view (state, emit) {
 			<div>
 				<a class="dib mb1">${state.entry.title}</a>
 				<div class="db">
-					<span class="mr1 tcgrey">${state.entry.date}</span>
+					<span class="${state.entry.date ? 'mr1' : ''} tcgrey">${state.entry.date}</span>
 					${modificators()}
 				</div>
 				<div class="db 1">

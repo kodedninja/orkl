@@ -46,12 +46,27 @@ function view(body) {
 			function onsave(e) {
 				e.preventDefault()
 
+				state.orkl.current.title = state.orkl.current.title.trim()
+				state.orkl.current.date = state.orkl.current.date.trim()
+
+				var do_save = true
+
 				if (state.orkl.current.title == '') {
-					emit('noTitle')
-					return
+					state.title_required = true
+					do_save = false
+				} else {
+					state.title_required = false
 				}
 
-				emit('saveContent')
+				if (state.orkl.current.date == '') {
+					state.date_required = true
+					do_save = false
+				} else {
+					state.date_required = false
+				}
+
+				if (do_save) emit('saveContent')
+				else emit('re')
 			}
 		}
 	}

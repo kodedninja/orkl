@@ -18,6 +18,7 @@ function orkl () {
 		state.loaded = false
 		state.export_content = false
 		state.title_required = false
+		state.date_required = false
 		state.orkl = {
 			config: {},
 			content: [],
@@ -39,7 +40,7 @@ function orkl () {
 		emitter.on('refresh', refresh)
 		emitter.on('saveContent', save)
 		emitter.on('delete', delete_entry)
-		emitter.on('noTitle', no_title)
+		emitter.on('re', re)
 
 		async function loaded() {
 			if (state.p2p) await load_dat()
@@ -174,8 +175,7 @@ function orkl () {
 			await archive.commit()
 		}
 
-		function no_title() {
-			state.title_required = true
+		function re() {
 			emitter.emit('render')
 		}
 

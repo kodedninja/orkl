@@ -8,10 +8,10 @@ module.exports = wrapper(view)
 var today = new Date()
 today = today.getFullYear() + '-' + format_number(today.getMonth() + 1)  + '-' + format_number(today.getDate())
 
-const title = new form.input('title', 'title', '')
-const date = new form.input('date', 'date', today)
+const title = new form.input('title', 'title')
+const date = new form.input('date', 'date')
 
-const text = new form.textarea('text', 'text', '')
+const text = new form.textarea('text', 'text')
 
 const select = new form.select('public', 'visible', 'not visible')
 
@@ -28,7 +28,8 @@ function view (state, emit) {
 					${title.render(state, '', true)}
 				</div>
 				<div class="1/2 dib">
-					${date.render(state)}
+					<span class="tcred f6">${state.date_required ? 'required' : ''}</span>
+					${date.render(state, today)}
 				</div>
 				<div class="1/2 dib">
 					${select.render(state, emit)}
