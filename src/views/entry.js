@@ -3,6 +3,9 @@ const wrapper = require('../components/wrapper')
 const format = require('../components/format')
 const notfound = require('../components/notfound')
 
+const Delete = require('../components/delete')
+const delete_button = new Delete()
+
 module.exports = wrapper(view)
 
 function view (state, emit) {
@@ -29,15 +32,10 @@ function view (state, emit) {
 		function modificators() {
 			if (state.orkl.dat.isOwner) return html`
 				<div class="dib">
-					<a href="/delete" class="mr1 tcred" onclick="${delete_entry}">delete</a>
+					${delete_button.render(state, emit)}
 				</div>
 			`
 			return null
-
-			function delete_entry(e) {
-				e.preventDefault()
-				emit('delete', state.params.entry)
-			}
 		}
 	}
 
