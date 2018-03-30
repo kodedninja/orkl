@@ -10,6 +10,7 @@ ctime: 1519762529663
 ----
 text: If you are reading this, then you've probably [forked the site](https://github.com/kodedninja/orkl#readme) successfully. This is a short guide on how to use orkl (it's really **not hard**).
 
+_Note: From **Beaker 0.8 prerelease.1** this is not needed!_
 If you haven't done it already, this is an important step. Open the ```dat.json``` file of your site and add the ```"fallback_page: "index.html"``` property to the JSON. This will tell Beaker to route every request to the ```index.html```.
 
 Orkl is now ready to use.
