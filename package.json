@@ -1,11 +1,11 @@
 {
   "name": "orkl",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Super simple peer-to-peer blogging site",
   "main": "src/index.js",
   "scripts": {
     "start": "watchify src/index.js -o bundle.js",
-	"build": "browserify src/index.js -o bundle.js"
+    "build": "browserify src/index.js -o bundle.js"
   },
   "repository": {
     "type": "git",
@@ -21,11 +21,18 @@
     "browserify": "^16.1.1",
     "choo": "^6.6.1",
     "dom-autofocus": "^1.0.1",
-    "forkup": "^0.1.1",
+    "forkup": "^0.2.0",
     "markdown-it": "^8.4.1",
     "nanocomponent": "^6.5.1",
     "smarkt": "0.0.1",
     "watchify": "^3.9.0",
     "xhr": "^2.4.1"
+  },
+  "update": {
+    "url": "dat://7c008f84aed883c5f8b033955f1678b8c1d5af2d0f9f2f93c69fbc5aeece4a6b/",
+    "files": [
+      "/bundle.js",
+      "/styles/ff.css"
+    ]
   }
 }

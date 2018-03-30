@@ -21,7 +21,7 @@ app.route('/:entry/edit', require('./views/edit'))
 app.mount('main')
 
 function update_view(state, emit) {
-	update('dat://7c008f84aed883c5f8b033955f1678b8c1d5af2d0f9f2f93c69fbc5aeece4a6b', ['/bundle.js', '/styles/ff.css'])
+	update()
 	emit('pushState', '/')
-	return html`<main></main>`
+	return html`<main><div class="loading"></div></main>`
 }

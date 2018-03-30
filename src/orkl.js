@@ -65,6 +65,7 @@ function orkl () {
 				var dir = await fs.readdir(state.orkl.config.directory)
 
 				if (dir.length == 0) {
+					state.loaded = true
 					emitter.emit(state.events.RENDER)
 					return
 				}
