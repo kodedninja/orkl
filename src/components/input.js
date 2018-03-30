@@ -13,7 +13,7 @@ module.exports = class Input extends Nanocomponent {
 
 	createElement(state, value, focus) {
 		const t = this
-		if (value) this.value = value
+		if (value != undefined) this.value = value
 		state.orkl.current[this.name] = this.value
 
 		const el = html`

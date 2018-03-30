@@ -8,10 +8,10 @@ module.exports = wrapper(view)
 var today = new Date()
 today = today.getFullYear() + '-' + format_number(today.getMonth() + 1)  + '-' + format_number(today.getDate())
 
-const title = new form.input('title', 'title')
+const title = new form.input('title', 'title', '')
 const date = new form.input('date', 'date', today)
 
-const text = new form.textarea('text', 'text')
+const text = new form.textarea('text', 'text', '')
 
 const select = new form.select('public', 'visible', 'not visible')
 
@@ -20,7 +20,6 @@ function view (state, emit) {
 		state.orkl.current.ctime = null
 		state.orkl.current.url = null
 		state.orkl.current.public = false
-		state.orkl.current.text = ''
 
 		return html`
 			<div class="1">
