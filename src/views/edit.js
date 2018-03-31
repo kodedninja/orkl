@@ -2,6 +2,7 @@ const html = require('choo/html')
 const format = require('../components/format')
 const wrapper = require('../components/wrapper')
 const form = require('../components/form')
+const notfound = require('../components/notfound')
 
 module.exports = wrapper(view)
 
@@ -38,6 +39,7 @@ function view (state, emit) {
 			</div>
 		`
 	}
+	return notfound()
 
 	function get_entry(e) {
 		for (var id in state.orkl.content) {

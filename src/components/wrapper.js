@@ -35,7 +35,7 @@ function view(body) {
 				</div>
 			`
 
-			if (state.route == '/new' || state.route == '/:entry/edit') return html`
+			if ((state.route == '/new' || state.route == '/:entry/edit') && state.orkl.dat.isOwner) return html`
 				<div class="fr">
 					<a href="/save" onclick="${onsave}">save</a>
 				</div>
