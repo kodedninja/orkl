@@ -59,8 +59,12 @@ h6, .f6 { font-size: .875rem; }
 
 .lh1 { line-height: 1.2 }
 
-p {
+p, ul, ol {
 	margin: 2rem 0;
+}
+
+li {
+	margin: 0.5rem 0;
 }
 
 p blockquote {
@@ -192,12 +196,6 @@ textarea {
 @keyframes spin {
   0% { transform: rotate(0deg) }
   100% { transform: rotate(360deg) }
-}
-/* Media query customs */
-@media (max-width: 900px) {
-	.sector {
-		width: 50% !important;
-	}
 }
 
 /* Media query customs */
