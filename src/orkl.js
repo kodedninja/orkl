@@ -1,6 +1,12 @@
 // the Dat part
 const smarkt = require('smarkt')
 const xhr = require('xhr')
+const RSS = require('rss')
+
+var MarkdownIt = require('markdown-it')
+var md = new MarkdownIt()
+
+md.use(require('markdown-it-sup'))
 
 module.exports = orkl
 
@@ -187,6 +193,35 @@ function orkl () {
 			state.export_content =  false
 
 			await fs.writefile('/content.json', JSON.stringify(http_data, null, '\t'))
+			
+			// RSS
+			var feed = new RSS({
+				title: state.orkl.config.title,
+				feed_url: '/feed.xml',
+				site_url: '/'
+			})
+
+			http_data.content.forEach(function(state) {
+				if (state.public) {
+					feed.item({
+						title: state.title,
+						description: md.render(excerpt(state.text)),
+						url: '/' + state.url,
+						date: state.date
+					})
+				}
+			})
+
+			await fs.writefile('/feed.xml', feed.xml({indent: true}))
+
+			function excerpt(text) {
+				if (text) {
+					var end = text.indexOf('\n\n')
+					if (end == -1) end = Math.min(text.length, 300)
+					return text ? text.substring(0, end) : ''
+				}
+				return null
+			}
 		}
 
 		function get_entry(e) {

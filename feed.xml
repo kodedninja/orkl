@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[orkl]]></title>
+        <description><![CDATA[orkl]]></description>
+        <link>/</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sun, 01 Apr 2018 11:55:22 GMT</lastBuildDate>
+        <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[How to use orkl?]]></title>
+            <description><![CDATA[<p>If you are reading this, then you've probably <a href="https://github.com/kodedninja/orkl#readme">forked the site</a> successfully. This is a short guide on how to use orkl (it's really not hard).</p>
+]]></description>
+            <link>/how-to-use-orkl</link>
+            <guid isPermaLink="true">/how-to-use-orkl</guid>
+            <pubDate>Tue, 27 Feb 2018 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

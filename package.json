@@ -21,10 +21,12 @@
     "browserify": "^16.1.1",
     "choo": "^6.6.1",
     "dom-autofocus": "^1.0.1",
+    "folderify": "^1.2.1",
     "forkup": "^0.2.0",
     "markdown-it": "^8.4.1",
     "markdown-it-sup": "^1.0.0",
     "nanocomponent": "^6.5.1",
+    "rss": "^1.2.2",
     "smarkt": "0.0.1",
     "watchify": "^3.9.0",
     "xhr": "^2.4.1"
