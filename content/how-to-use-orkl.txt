@@ -31,6 +31,9 @@ You can also delete an entry with the red "delete" button. Pretty obvious. You h
 ### Updating
 I've included my module ```forkup``` so you can update your fork if there's a new version on the main site. You only have to navigate to ```dat://[yoursite]/update``` and then reload the page and everything will be updated.
 
+### RSS
+Orkl automatically generates an RSS feed to [```dat://[yoursite]/feed.xml```](/feed.xml) (you must directly navigate to this). Naturally, it's also accessible on ```https```.
+
 #### ~
 
 That's all. I said it won't be complicated. You can delete this entry if you want and access it anytime [here](dat://orkl-kodedninja.hashbase.io/how-to-use-orkl). Feel free to contribute and to give feedback.
