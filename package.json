@@ -1,6 +1,6 @@
 {
   "name": "orkl",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Super simple peer-to-peer blogging site",
   "main": "src/index.js",
   "scripts": {
