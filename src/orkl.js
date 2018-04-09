@@ -83,8 +83,8 @@ function orkl () {
 					content.url = file.replace('.txt', '')
 					state.orkl.content.push(content)
 					state.orkl.content.sort((a, b) => {
-						if (b.date == a.date) return b.ctime - a.ctime
-						return b.date > a.date
+						if (a.date && b.date && b.date == a.date) return b.ctime - a.ctime
+						return b.date - a.date
 					})
 
 					if (id === dir.length - 1) {
@@ -193,7 +193,7 @@ function orkl () {
 			state.export_content =  false
 
 			await fs.writefile('/content.json', JSON.stringify(http_data, null, '\t'))
-			
+
 			// RSS
 			var feed = new RSS({
 				title: state.orkl.config.title,
