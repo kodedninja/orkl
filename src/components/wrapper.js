@@ -3,9 +3,16 @@ const form = require('./form')
 
 module.exports = view
 
+var k = false
+
 function view(body) {
 	return function(state, emit) {
 		if (!state.loaded) return html`<main><div class="loading"></div></main>`
+
+		if (!k) {
+			document.addEventListener('keydown', keydown)
+			k = true
+		}
 
 		return html`
 			<main class="p2 1 db mxa mw1400">
@@ -42,32 +49,41 @@ function view(body) {
 			`
 
 			return null
+		}
 
-			function onsave(e) {
-				e.preventDefault()
-
-				state.orkl.current.title = state.orkl.current.title.trim()
-				state.orkl.current.date = state.orkl.current.date.trim()
-
-				var do_save = true
-
-				if (state.orkl.current.title == '') {
-					state.title_required = true
-					do_save = false
-				} else {
-					state.title_required = false
+		function keydown(e) {
+			if ((state.route == '/new' || state.route == '/:entry/edit') && state.orkl.dat.isOwner) {
+				if (e.ctrlKey && e.keyCode == 83) {
+					e.preventDefault()
+					onsave()
 				}
-
-				if (state.orkl.current.date == '') {
-					state.date_required = true
-					do_save = false
-				} else {
-					state.date_required = false
-				}
-
-				if (do_save) emit('saveContent')
-				else emit('re')
 			}
+		}
+
+		function onsave(e) {
+			if (e) e.preventDefault()
+
+			state.orkl.current.title = state.orkl.current.title.trim()
+			state.orkl.current.date = state.orkl.current.date.trim()
+
+			var do_save = true
+
+			if (state.orkl.current.title == '') {
+				state.title_required = true
+				do_save = false
+			} else {
+				state.title_required = false
+			}
+
+			if (state.orkl.current.date == '') {
+				state.date_required = true
+				do_save = false
+			} else {
+				state.date_required = false
+			}
+
+			if (do_save) emit('saveContent')
+			else emit('re')
 		}
 	}
 }
