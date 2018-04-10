@@ -3,4 +3,5 @@ bundle.js
 dat.json
 
 content/*
+files
 !content/how-to-use-orkl.txt

@@ -35,7 +35,7 @@ function view (state, emit) {
 					${select.render(state, emit)}
 				</div>
 				<hr />
-				${text.render(state, state.entry.text, true)}
+				${text.render(state, emit, state.entry.text, true)}
 			</div>
 		`
 	}

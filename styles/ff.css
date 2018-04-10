@@ -173,6 +173,7 @@ input, textarea {
     font-feature-settings:"onum" 1, "pnum" 1, "kern" 1, "ss01" 1;
     font-kerning: normal;
     letter-spacing: 0.5px;
+	border: none;
 }
 
 textarea {

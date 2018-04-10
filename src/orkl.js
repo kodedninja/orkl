@@ -47,6 +47,7 @@ function orkl () {
 		emitter.on('saveContent', save)
 		emitter.on('delete', delete_entry)
 		emitter.on('re', re)
+		emitter.on('file', handle_file)
 
 		async function loaded() {
 			if (state.p2p) await load_dat()
@@ -183,6 +184,14 @@ function orkl () {
 
 		function re() {
 			emitter.emit('render')
+		}
+
+		async function handle_file(file) {
+			try {
+				await fs.mkdir('/files')
+			} catch (e) {}
+			
+			await fs.writefile('/files/' + file.name, file.data)
 		}
 
 		async function write_export() {
