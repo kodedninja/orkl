@@ -83,7 +83,7 @@ function orkl () {
 					content = smarkt.parse(content)
 					content.url = file.replace('.txt', '')
 					state.orkl.content.push(content)
-					state.orkl.content.sort((a, b) => {
+					state.orkl.content.sort((b, a) => {
 						if (a.date && b.date && b.date == a.date) return b.ctime - a.ctime
 						return b.date - a.date
 					})
@@ -190,7 +190,7 @@ function orkl () {
 			try {
 				await fs.mkdir('/files')
 			} catch (e) {}
-			
+
 			await fs.writefile('/files/' + file.name, file.data)
 		}
 
