@@ -83,9 +83,9 @@ function orkl () {
 					content = smarkt.parse(content)
 					content.url = file.replace('.txt', '')
 					state.orkl.content.push(content)
-					state.orkl.content.sort((b, a) => {
+					state.orkl.content.sort((a, b) => {
 						if (a.date && b.date && b.date == a.date) return b.ctime - a.ctime
-						return b.date - a.date
+						return b.date.localeCompare(a.date)
 					})
 
 					if (id === dir.length - 1) {
