@@ -34,6 +34,7 @@ function view (state, emit) {
 			if (text) {
 				var end = text.indexOf('\n\n')
 				if (end == -1) end = Math.min(text.length, 300)
+				if (end > 300) end = 300
 				return text ? format(text.substring(0, end)) : ''
 			}
 			return null
