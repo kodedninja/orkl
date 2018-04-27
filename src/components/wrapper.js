@@ -7,7 +7,7 @@ var k = false
 
 function view(body) {
 	return function(state, emit) {
-		if (!state.loaded) return html`<main><div class="loading"></div></main>`
+		if (!state.loaded) return html`<body><div class="loading"></div></body>`
 
 		if (!k) {
 			document.addEventListener('keydown', keydown)
@@ -15,7 +15,7 @@ function view(body) {
 		}
 
 		return html`
-			<main class="p2 1 db mxa mw1400">
+			<body class="p2 1 db mxa mw1400" style="${apply_style()}">
 				<div class="db 2/3 m-1 mxa">
 					<div class="db mb2">
 						<a href="/" class="nbb">${state.orkl.config ? state.orkl.config.title : ''}</a>
@@ -24,7 +24,7 @@ function view(body) {
 					${body(state, emit)}
 					<div class="db 1 p1"></div>
 				</div>
-			</main>
+			</body>
 		`
 
 		function new_nav() {
@@ -84,6 +84,13 @@ function view(body) {
 
 			if (do_save) emit('saveContent')
 			else emit('re')
+		}
+
+		function apply_style() {
+			if (!state.orkl.config.style) return ''
+
+			const style = state.orkl.config.style
+			return `font-family: ${style.fontfamily}; background: ${style.background}; color: ${style.color}; font-size: ${style.fontsize}`
 		}
 	}
 }

@@ -23,7 +23,7 @@ app.route('/update', update_view)
 app.route('/:entry', require('./views/entry'))
 app.route('/:entry/edit', require('./views/edit'))
 
-app.mount('main')
+app.mount('body')
 
 function update_view(state, emit) {
 	update()

@@ -3,8 +3,8 @@ const smarkt = require('smarkt')
 const xhr = require('xhr')
 const RSS = require('rss')
 
-var MarkdownIt = require('markdown-it')
-var md = new MarkdownIt()
+const MarkdownIt = require('markdown-it')
+const md = new MarkdownIt()
 
 md.use(require('markdown-it-sup'))
 
@@ -39,6 +39,13 @@ function orkl () {
 			}
 		}
 
+		const default_style = {
+			fontfamily: "'Inter UI', helvetica, sans-serif",
+			fontsize: '14px',
+			'background': '#fff',
+			'color': '#000'
+		}
+
 		emitter.on('navigation', () => {
 			state.title_required = false
 		})
@@ -59,6 +66,7 @@ function orkl () {
 		async function load_dat() {
 			var config = await fs.readfile('/config.json')
 			state.orkl.config = JSON.parse(config)
+			if (!state.orkl.config.style) state.orkl.config.style = default_style
 			state.orkl.dat = await archive.getInfo()
 			state.orkl.config.title = state.orkl.config.title || state.orkl.dat.title
 
@@ -111,6 +119,7 @@ function orkl () {
 						var http_data = JSON.parse(res.body)
 						state.orkl.dat = {isOwner: false}
 						state.orkl.config = http_data.config
+						if (!state.orkl.config.style) state.orkl.config.style = default_style
 						state.orkl.content = http_data.content
 
 						state.loaded = true

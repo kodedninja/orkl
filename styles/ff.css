@@ -18,7 +18,7 @@ body, pre {
 }
 
 a {
-  color: #000;
+  color: inherit;
   text-decoration: none;
 }
 
