@@ -251,6 +251,14 @@ select {
 	color: inherit;
 }
 
+.customize {
+	position: fixed;
+	right: 1rem;
+	top: 1rem;
+	transform-origin: 100% 100%;
+	transform: rotate(-90deg);
+}
+
 /* Media query customs */
 
 @media (max-width: 900px) {

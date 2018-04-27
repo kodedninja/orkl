@@ -17,7 +17,8 @@ function view(body) {
 		return html`
 			<body class="1 db" style="${apply_style()}">
 				${customize()}
-				<div class="db p2 2/3 m-1 mxa mw1400">
+				<div class="db p2 2/3 m-1 mxa mw1400 pr">
+					<a href="#" class="customize" onclick="${customize_click}">customize</a>
 					<div class="db mb2">
 						<a href="/" class="nbb">${state.orkl.config ? state.orkl.config.title : ''}</a>
 						${new_nav()}
@@ -28,13 +29,19 @@ function view(body) {
 			</body>
 		`
 
+		function customize_click(e) {
+			e.preventDefault()
+
+			state.customize = !state.customize
+			emit('re')
+		}
+
 		function new_nav() {
 			if (!state.orkl) return null
 
 			if (state.route != '/new' && state.route != '/:entry/edit' && state.route != '/:entry' && state.orkl.dat.isOwner) return html`
 				<div class="fr">
 					<a href="/new" class="mr1">new entry</a>
-					<a href="#" class="nbb" onclick="${customize_click}">⚙</a>
 				</div>
 			`
 
@@ -49,13 +56,6 @@ function view(body) {
 					<a href="/save" onclick="${onsave}">save</a>
 				</div>
 			`
-
-			function customize_click(e) {
-				e.preventDefault()
-
-				state.customize = !state.customize
-				emit('re')
-			}
 
 			return null
 		}
@@ -116,17 +116,17 @@ function view(body) {
 									<option value="'arial', sans-serif" ${style.fontfamily == "'arial', sans-serif" ? 'selected' : ''}>Arial</option>
 									<option value="monospace" ${style.fontfamily == "monospace" ? 'selected' : ''}>Monospace</option>
 									<option value="georgia" ${style.fontfamily == "georgia" ? 'selected' : ''}>Georgia</option>
-
-
 								</select>
 							</div>
 							<div class="db 1 mb0-5">
 								<span class="mr1">background: </span>
 								<input type="text" placeholder="#fff" onchange="${bg_change}" value="${style.background}">
+								<span class="ml1 tcgrey">experimental</span>
 							</div>
 							<div class="db 1">
 								<span class="mr1">text color: </span>
 								<input type="text" placeholder="#000" onchange="${color_change}" value="${style.color}">
+								<span class="ml1 tcgrey">experimental</span>
 							</div>
 						</div>
 					</div>

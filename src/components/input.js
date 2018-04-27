@@ -17,12 +17,16 @@ module.exports = class Input extends Nanocomponent {
 		state.orkl.current[this.name] = this.value
 
 		const el = html`
-			<input type="text" id="${this.name}" name="${this.name}" placeholder="${this.placeholder}" class="bn 1 f5 ffi" value="${this.value}" onkeyup="${key}">
+			<input type="text" id="${this.name}" name="${this.name}" placeholder="${this.placeholder}" class="bn 1 f5 ffi" value="${this.value}" onkeyup="${key}" style="${style()}">
 		`
 
 		function key(e) {
 			t.value = this.value
 			state.orkl.current[t.name] = this.value
+		}
+
+		function style() {
+			return `font-family: ${state.orkl.config.style.fontfamily}; font-size: ${state.orkl.config.style.fontsize};`
 		}
 
 		if (focus) return autofocus(el)
