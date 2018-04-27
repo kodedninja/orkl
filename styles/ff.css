@@ -2,9 +2,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background: transparent;
 }
 
-html { font-size: 14px }
+html { font-size: 14px; background: white; }
 
 body, pre {
    font-family: 'Inter UI', helvetica, sans-serif;
