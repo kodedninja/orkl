@@ -1,3 +1,10 @@
 {
-	"directory": "content"
+	"directory": "content",
+	"style": {
+		"fontfamily": "'Inter UI', helvetica, sans-serif",
+		"fontsize": "14",
+		"background": "#fff",
+		"color": "#000"
+	},
+	"title": "orkl"
 }

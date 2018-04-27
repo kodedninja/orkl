@@ -23,8 +23,11 @@ function orkl () {
 		state.events = state.events || { }
 		state.loaded = false
 		state.export_content = false
+		state.customize = false
+
 		state.title_required = false
 		state.date_required = false
+
 		state.orkl = {
 			config: {},
 			content: [],
@@ -41,7 +44,7 @@ function orkl () {
 
 		const default_style = {
 			fontfamily: "'Inter UI', helvetica, sans-serif",
-			fontsize: '14px',
+			fontsize: 14,
 			'background': '#fff',
 			'color': '#000'
 		}
@@ -55,6 +58,7 @@ function orkl () {
 		emitter.on('delete', delete_entry)
 		emitter.on('re', re)
 		emitter.on('file', handle_file)
+		emitter.on('savestyle', save_style)
 
 		async function loaded() {
 			if (state.p2p) await load_dat()
@@ -178,6 +182,16 @@ function orkl () {
 					await precheck() // hopefully this will never happen
 				} catch (e) {}
 			}
+		}
+
+		var timeout_style = null
+		function save_style() {
+			if (timeout_style) clearTimeout(timeout_style)
+
+			timeout_style = setTimeout(async function() {
+				await fs.writefile('/config.json', JSON.stringify(state.orkl.config, null, '\t'))
+			}, 500)
+			emitter.emit('render')
 		}
 
 		async function delete_entry(entry) {
