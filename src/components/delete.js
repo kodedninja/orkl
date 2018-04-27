@@ -32,4 +32,8 @@ module.exports = class Delete extends Nanocomponent {
 			}
 		}
 	}
+
+	update() {
+		return false
+	}
 }
