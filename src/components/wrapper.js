@@ -101,7 +101,7 @@ function view(body) {
 				return html`
 					<div class="db 1 bb p2">
 						<div class="1/5 dib fl">
-							Customize:
+							customize:
 						</div>
 						<div class="4/5 dib">
 							<div class="db 1 mb0-5">
@@ -114,6 +114,10 @@ function view(body) {
 								<select onchange="${change_font_style}">
 									<option value="'Inter UI', helvetica, sans-serif" ${style.fontfamily == "'Inter UI', helvetica, sans-serif" ? 'selected' : ''}>Inter UI</option>
 									<option value="'arial', sans-serif" ${style.fontfamily == "'arial', sans-serif" ? 'selected' : ''}>Arial</option>
+									<option value="monospace" ${style.fontfamily == "monospace" ? 'selected' : ''}>Monospace</option>
+									<option value="georgia" ${style.fontfamily == "georgia" ? 'selected' : ''}>Georgia</option>
+
+
 								</select>
 							</div>
 							<div class="db 1 mb0-5">

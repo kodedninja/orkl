@@ -170,6 +170,7 @@ input, textarea {
 	font-family: inherit;
     line-height: inherit;
     font-size: inherit;
+	color: inherit;
     font-feature-settings:"onum" 1, "pnum" 1, "kern" 1, "ss01" 1;
     font-kerning: normal;
     letter-spacing: 0.5px;
@@ -247,6 +248,7 @@ select {
 	outline: none;
 	font-family: inherit;
 	font-size: inherit;
+	color: inherit;
 }
 
 /* Media query customs */
