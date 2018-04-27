@@ -190,6 +190,7 @@ function orkl () {
 
 			timeout_style = setTimeout(async function() {
 				await fs.writefile('/config.json', JSON.stringify(state.orkl.config, null, '\t'))
+				write_export()
 			}, 500)
 			emitter.emit('render')
 		}

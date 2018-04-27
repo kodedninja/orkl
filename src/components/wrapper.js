@@ -101,7 +101,7 @@ function view(body) {
 				var style = state.orkl.config.style
 				return html`
 					<div class="db bb p2">
-						<div class="2/3 m-1 mxa">
+						<div class="2/3 m-1 mxa p1">
 							<div class="1 dib">
 								<div class="db 1 mb0-5">
 									<span class="mr1">font size: </span>
