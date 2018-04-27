@@ -2,6 +2,7 @@
 const smarkt = require('smarkt')
 const xhr = require('xhr')
 const RSS = require('rss')
+const slugify = require('@sindresorhus/slugify')
 
 const MarkdownIt = require('markdown-it')
 const md = new MarkdownIt()
@@ -140,7 +141,7 @@ function orkl () {
 		async function save(data) {
 			state.title_required = false
 
-			var filename = state.orkl.current.url || sanitize(state.orkl.current.title)
+			var filename = state.orkl.current.url || slugify(state.orkl.current.title)
 
 			var data = {
 				title: state.orkl.current.title,
@@ -166,13 +167,6 @@ function orkl () {
 
 			emitter.emit('pushState', '/' + filename)
 			await archive.commit()
-
-			function sanitize(str) {
-				return str
-					.toLowerCase()
-					.replace(/\s+/g, '-')
-				    .replace(/[.,\/#!@?$%\^&\*;:{}=\_`~()\'\"]/g, '')
-			}
 
 			async function precheck() {
 				try {
