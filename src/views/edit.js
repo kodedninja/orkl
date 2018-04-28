@@ -6,12 +6,12 @@ const notfound = require('../components/notfound')
 
 module.exports = wrapper(view)
 
-const title = new form.input('title', 'title')
-const date = new form.input('date', 'date')
+const title = new form.input('title', "what's your post title?", '', 'f1 my1')
+const date = new form.input('date', 'date of publishing')
 
-const text = new form.textarea('text', 'text')
+const text = new form.textarea('text', 'what do you want to share? start typing...')
 
-const select = new form.select('public', 'visible', 'not visible')
+const select = new form.select('public', 'published', 'draft')
 
 function view (state, emit) {
 	state.entry = get_entry(state.params.entry)
@@ -23,10 +23,6 @@ function view (state, emit) {
 
 		return html`
 			<div class="1">
-				<div class="mb1 1">
-					<span class="tcred f6">${state.title_required ? 'required' : ''}</span>
-					${title.render(state, state.entry.title)}
-				</div>
 				<div class="1/2 dib">
 					<span class="tcred f6">${state.date_required ? 'required' : ''}</span>
 					${date.render(state, state.entry.date)}
@@ -34,7 +30,10 @@ function view (state, emit) {
 				<div class="1/2 dib">
 					${select.render(state, emit)}
 				</div>
-				<hr />
+				<div class="1">
+					<span class="tcred f6">${state.title_required ? 'required' : ''}</span>
+					${title.render(state, state.entry.title)}
+				</div>
 				${text.render(state, emit, state.entry.text, true)}
 			</div>
 		`

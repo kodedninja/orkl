@@ -9,12 +9,12 @@ module.exports = wrapper(view)
 var today = new Date()
 today = today.getFullYear() + '-' + format_number(today.getMonth() + 1)  + '-' + format_number(today.getDate())
 
-const title = new form.input('title', 'title')
-const date = new form.input('date', 'date')
+const title = new form.input('title', "what's your post title?", '', 'f1 my1')
+const date = new form.input('date', 'date of publishing')
 
-const text = new form.textarea('text', 'text')
+const text = new form.textarea('text', 'what do you want to share? start typing...')
 
-const select = new form.select('public', 'visible', 'not visible')
+const select = new form.select('public', 'published', 'draft')
 
 function view (state, emit) {
 	if (state.orkl.dat.isOwner) {
@@ -24,18 +24,17 @@ function view (state, emit) {
 
 		return html`
 			<div class="1">
-				<div class="mb1 1">
+				<div class="1">
+					<div class="1/2 dib">
+						<span class="tcred f6">${state.date_required ? 'required' : ''}</span>
+						${date.render(state, today)}
+					</div>
+					<div class="1/2 dib ">
+						${select.render(state, emit)}
+					</div>
 					<span class="tcred f6">${state.title_required ? 'required' : ''}</span>
 					${title.render(state, '', true)}
 				</div>
-				<div class="1/2 dib">
-					<span class="tcred f6">${state.date_required ? 'required' : ''}</span>
-					${date.render(state, today)}
-				</div>
-				<div class="1/2 dib">
-					${select.render(state, emit)}
-				</div>
-				<hr />
 				${text.render(state, emit, '')}
 			</div>
 		`
