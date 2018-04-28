@@ -19,7 +19,7 @@ function view(body) {
 			<body class="1 db" style="${apply_style()}">
 				${customize(state, emit)}
 				<div class="db p2 2/3 m-1 mxa mw1400 pr">
-					${state.orkl.dat.isOwner ? html`<a href="#" class="customize ba brpill nbb pbutton" onclick="${customize_click}">${!state.customize ? 'customize' : 'close'}</a>` : ''}
+					${state.orkl.dat.isOwner ? html`<a href="#" class="customize button" onclick="${customize_click}">${!state.customize ? 'customize' : 'close'}</a>` : ''}
 					<div class="db mb2">
 						<a href="/" class="nbb">${state.orkl.config ? state.orkl.config.title : ''}</a>
 						${new_nav()}
@@ -42,19 +42,19 @@ function view(body) {
 
 			if (state.route != '/new' && state.route != '/:entry/edit' && state.route != '/:entry' && state.orkl.dat.isOwner) return html`
 				<div class="fr">
-					<a href="/new" class="mr1 ba brpill nbb pbutton ${state.welcome ? 'blink' : ''}">${!state.welcome ? 'new entry' : 'write your first entry'}</a>
+					<a href="/new" class="mr1 button ${state.welcome ? 'blink' : ''}">${!state.welcome ? 'new entry' : 'write your first entry'}</a>
 				</div>
 			`
 
 			if (state.route == '/:entry' && state.orkl.dat.isOwner) return html`
 				<div class="fr">
-					<a href="${state.href + '/edit'}" class="mr1 ba brpill nbb pbutton">edit</a>
+					<a href="${state.href + '/edit'}" class="mr1 button">edit</a>
 				</div>
 			`
 
 			if ((state.route == '/new' || state.route == '/:entry/edit') && state.orkl.dat.isOwner) return html`
 				<div class="fr">
-					<a href="/save" onclick="${onsave}" class="mr1 ba brpill nbb pbutton">save</a>
+					<a href="/save" onclick="${onsave}" class="mr1 button">save</a>
 				</div>
 			`
 

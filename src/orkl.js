@@ -106,11 +106,12 @@ function orkl () {
 						if (state.export_content) write_export(true)
 
 						if (state.orkl.content.length == 1) {
-							console.log(state.orkl.content[0])
 							if (state.orkl.content[0].url == 'how-to-use-orkl') {
 								state.welcome = true
 								if (!state.loaded) emitter.emit('replaceState', "/how-to-use-orkl")
 							}
+						} else {
+							state.welcome = false
 						}
 
 						state.loaded = true

@@ -43,7 +43,7 @@ Orkl automatically generates an RSS feed to [```dat://[yoursite]/feed.xml```](/f
 
 That's all. I said it won't be complicated. You can delete this entry if you want and access it anytime [here](dat://orkl-kodedninja.hashbase.io/how-to-use-orkl). Feel free to contribute and to give feedback.
 
-<div class="tac my2"><a href="/" class="nbb pbutton ba brpill">go to homepage</a></div>
+<div class="tac my2"><a href="/" class="button">go to homepage</a></div>
 
 [Source](https://github.com/kodedninja/orkl) | [Typeface](https://rsms.me/inter) | Version 0.2.1
 

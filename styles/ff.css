@@ -21,7 +21,7 @@ a {
   text-decoration: none;
 }
 
-a:not(.nbb) {
+a:not(.nbb):not(.button) {
   border-bottom: 1px solid #ddd;
   padding-bottom: 0.2em;
 }
@@ -79,7 +79,7 @@ p blockquote {
 }
 
 code {
-    background-color: #eee;
+	background: rgba(0, 0, 0, 0.1);
     padding: 2px;
 }
 
@@ -266,6 +266,13 @@ select {
 
 @keyframes blinker {
   50% { opacity: 0; }
+}
+
+.button {
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 100px;
+	padding: 0.4em 0.8em
 }
 
 /* Media query customs */
