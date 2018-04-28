@@ -30,6 +30,9 @@ If you navigate to one of the entries you can see that at the top right corner t
 
 You can also delete an entry with the red "delete" button. Pretty obvious. You have to click it twice!
 
+### Customization
+_Version 0.3.0_. You can customize orkl a bit to make sure the content matches the design. If you click the _customize_ button -90° rotated in the top-right corner a few fields appear. You can set the font size, the font family, the background and foreground colors. It's very minimalistic (there are only 4 fonts currently) but more to come.
+
 ### Updating
 I've included my module ```forkup``` so you can update your fork if there's a new version on the main site. You only have to navigate to ```dat://[yoursite]/update``` and then reload the page and everything will be updated.
 

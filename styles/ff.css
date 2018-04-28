@@ -126,7 +126,9 @@ hr {
 .bn { border-style: none; border-width: 0; }
 
 .br0 { border-radius: 0; }
+.brpill { border-radius: 100px; }
 
+.pbutton { padding: 0.4em 0.8em }
 .p0-5 { padding: 0.75rem }
 .p1 { padding: 1.5rem }
 .p2 { padding: 3rem }
