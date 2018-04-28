@@ -2,6 +2,34 @@ const html = require('choo/html')
 
 module.exports = customize
 
+const fonts = [
+	{
+		name: 'Inter UI',
+		value: "'Inter UI', sans-serif"
+	},
+	{
+		name: 'Arial',
+		value: "'arial', sans-serif"
+	},
+	{
+		name: 'System',
+		value: "-apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif"
+	},
+	{
+		name: 'Georgia',
+		value: "georgia, serif"
+	},
+	{
+		name: 'Monospace',
+		value: "monospace"
+	},
+	{
+		name: 'Helvetica',
+		value: "'helvetica neue', helvetica, sans-serif"
+	},
+]
+
+
 function customize(state, emit) {
 	if (state.customize) {
 		var style = state.orkl.config.style
@@ -17,10 +45,7 @@ function customize(state, emit) {
 						<div class="db 1 mb0-5">
 							<span class="mr1">font: </span>
 							<select onchange="${change_font_style}">
-								<option value="'Inter UI', helvetica, sans-serif" ${style.fontfamily == "'Inter UI', helvetica, sans-serif" ? 'selected' : ''}>Inter UI</option>
-								<option value="'arial', sans-serif" ${style.fontfamily == "'arial', sans-serif" ? 'selected' : ''}>Arial</option>
-								<option value="monospace" ${style.fontfamily == "monospace" ? 'selected' : ''}>Monospace</option>
-								<option value="georgia" ${style.fontfamily == "georgia" ? 'selected' : ''}>Georgia</option>
+								${fonts.map(font)}
 							</select>
 						</div>
 						<div class="db 1 mb0-5">
@@ -66,5 +91,11 @@ function customize(state, emit) {
 		if (!colorcode.test(res)) return
 		state.orkl.config.style.color = res
 		emit('savestyle')
+	}
+
+	function font(f) {
+		return html`
+			<option value="${f.value}" ${style.fontfamily == f.value ? 'selected' : ''}>${f.name}</option>
+		`
 	}
 }

@@ -1,7 +1,7 @@
 {
 	"directory": "content",
 	"style": {
-		"fontfamily": "'Inter UI', helvetica, sans-serif",
+		"fontfamily": "'Inter UI', sans-serif",
 		"fontsize": "15",
 		"hsize": "24.00",
 		"background": "#fff",
