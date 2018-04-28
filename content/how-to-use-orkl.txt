@@ -1,12 +1,12 @@
 title: How to use orkl?
 ----
-date: 2018-02-27
+date: 2018-04-28
 ----
 url: how-to-use-orkl
 ----
 public: true
 ----
-ctime: 1519762529663
+ctime: 1524900259526
 ----
 text: If you are reading this, then you've probably [forked the site](https://github.com/kodedninja/orkl#readme) successfully. This is a short guide on how to use orkl (it's really not hard).
 
@@ -14,34 +14,36 @@ If you haven't done it already, this is an important step. Open the ```dat.json`
 
 Orkl is now ready to use.
 
-## Writing a new entry
+### Writing a new entry
 Navigate to the [homepage](/) of the site and click the [new entry](/new) button at the top right corner.
 
 Welcome to the editor. You can enter a title, specify a date and write beautiful text. That's all. To style your text content you can use [Markdown](https://daringfireball.net/projects/markdown/) ([cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)), a common "lightweight markup language with plain text formatting syntax" ^2^.
 
 You can also include images. Simply drag-and-drop the image into the editor and it'll be uploaded and inserted at the cursor's current position.
 
-### Publishing
+#### Publishing
 
 Next to the date field there's a new "visible/not visible" button, which represents the current status of the entry. Not visible entries can only be seen by you.
 
-## Modifying entries
+### Modifying entries
 If you navigate to one of the entries you can see that at the top right corner there's an "edit" button. If you click on that it'll navigate you to the editor and you already know how to use that.
 
 You can also delete an entry with the red "delete" button. Pretty obvious. You have to click it twice!
 
-## Customization
+### Customization
 _Version 0.3.0_. You can customize orkl a bit to make sure the content matches the design. If you click the _customize_ button -90° rotated in the top-right corner a few fields appear. You can set the font size, the font family, the background and foreground colors. It's very minimalistic (there are only 4 fonts currently) but more to come.
 
-## Updating
+### Updating
 I've included my module ```forkup``` so you can update your fork if there's a new version on the main site. You only have to navigate to ```dat://[yoursite]/update``` and then reload the page and everything will be updated.
 
-## RSS
+### RSS
 Orkl automatically generates an RSS feed to [```dat://[yoursite]/feed.xml```](/feed.xml) (you must directly navigate to this). Naturally, it's also accessible on ```https```.
 
-### ~
+#### ~
 
 That's all. I said it won't be complicated. You can delete this entry if you want and access it anytime [here](dat://orkl-kodedninja.hashbase.io/how-to-use-orkl). Feel free to contribute and to give feedback.
+
+<div class="tac my2"><a href="/" class="nbb pbutton ba brpill">go to homepage</a></div>
 
 [Source](https://github.com/kodedninja/orkl) | [Typeface](https://rsms.me/inter) | Version 0.2.1
 

@@ -262,6 +262,12 @@ select {
 	transform: rotate(-90deg);
 }
 
+.blink { animation: blinker 2s linear infinite; }
+
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+
 /* Media query customs */
 
 @media (max-width: 900px) {

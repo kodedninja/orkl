@@ -87,6 +87,7 @@ function orkl () {
 
 				if (dir.length == 0) {
 					state.loaded = true
+					state.welcome = true
 					emitter.emit(state.events.RENDER)
 					return
 				}
@@ -103,6 +104,15 @@ function orkl () {
 
 					if (id === dir.length - 1) {
 						if (state.export_content) write_export(true)
+
+						if (state.orkl.content.length == 1) {
+							console.log(state.orkl.content[0])
+							if (state.orkl.content[0].url == 'how-to-use-orkl') {
+								state.welcome = true
+								if (!state.loaded) emitter.emit('replaceState', "/how-to-use-orkl")
+							}
+						}
+
 						state.loaded = true
 						emitter.emit(state.events.RENDER)
 					}

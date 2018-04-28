@@ -1,7 +1,8 @@
 var html = require('choo/html')
 var MarkdownIt = require('markdown-it')
 var md = new MarkdownIt({
-	breaks: true
+	breaks: true,
+	html: true
 })
 
 md.use(require('markdown-it-sup'))

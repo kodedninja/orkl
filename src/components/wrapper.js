@@ -42,7 +42,7 @@ function view(body) {
 
 			if (state.route != '/new' && state.route != '/:entry/edit' && state.route != '/:entry' && state.orkl.dat.isOwner) return html`
 				<div class="fr">
-					<a href="/new" class="mr1 ba brpill nbb pbutton">new entry</a>
+					<a href="/new" class="mr1 ba brpill nbb pbutton ${state.welcome ? 'blink' : ''}">${!state.welcome ? 'new entry' : 'write your first entry'}</a>
 				</div>
 			`
 
