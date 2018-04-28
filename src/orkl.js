@@ -108,7 +108,7 @@ function orkl () {
 						if (state.orkl.content.length == 1) {
 							if (state.orkl.content[0].url == 'how-to-use-orkl') {
 								state.welcome = true
-								if (!state.loaded) emitter.emit('replaceState', "/how-to-use-orkl")
+								if (!state.loaded && state.route == '/') emitter.emit('replaceState', "/how-to-use-orkl")
 							}
 						} else {
 							state.welcome = false
