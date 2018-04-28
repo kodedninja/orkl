@@ -28,7 +28,7 @@ const fonts = [
 		value: "'helvetica neue', helvetica, sans-serif"
 	},
 ]
-
+const colorcode = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i
 
 function customize(state, emit) {
 	if (state.customize) {
@@ -38,25 +38,23 @@ function customize(state, emit) {
 				<div class="2/3 m-1 mxa p1">
 					<div class="1 dib">
 						<div class="db 1 mb0-5">
-							<span class="mr1">text size: </span>
+							<span class="mr1 tcgrey">text size: </span>
 							<input type="range" oninput="${change_font}" onchange="${change_font}" class="2/3" min="15" max="26" step="1" value="${style.fontsize}">
 							<span class="ml1">${style.fontsize}px</span>
 						</div>
 						<div class="db 1 mb0-5">
-							<span class="mr1">font: </span>
+							<span class="mr1 tcgrey">font: </span>
 							<select onchange="${change_font_style}">
 								${fonts.map(font)}
 							</select>
 						</div>
 						<div class="db 1 mb0-5">
-							<span class="mr1">background: </span>
-							<input type="text" placeholder="#fff" onchange="${bg_change}" value="${style.background}">
-							<span class="ml1 tcgrey">experimental</span>
+							<span class="mr1 tcgrey">background (beta): </span>
+							<input type="text" placeholder="#fff" onkeyup="${bg_change}" value="${style.background}">
 						</div>
 						<div class="db 1">
-							<span class="mr1">text color: </span>
-							<input type="text" placeholder="#000" onchange="${color_change}" value="${style.color}">
-							<span class="ml1 tcgrey">experimental</span>
+							<span class="mr1 tcgrey">text color (beta): </span>
+							<input type="text" placeholder="#000" onkeyup="${color_change}" value="${style.color}">
 						</div>
 					</div>
 				</div>

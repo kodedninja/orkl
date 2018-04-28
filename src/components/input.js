@@ -35,7 +35,7 @@ module.exports = class Input extends Nanocomponent {
 		return el
 	}
 
-	update(value) {
+	update(state, value, focus) {
 		return false
 	}
 }

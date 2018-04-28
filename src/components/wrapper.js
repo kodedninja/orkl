@@ -5,7 +5,6 @@ const customize = require('./customize')
 module.exports = view
 
 var k = false
-const colorcode = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i
 
 function view(body) {
 	return function(state, emit) {
