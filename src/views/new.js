@@ -9,8 +9,8 @@ module.exports = wrapper(view)
 var today = new Date()
 today = today.getFullYear() + '-' + format_number(today.getMonth() + 1)  + '-' + format_number(today.getDate())
 
-const title = new form.input('title', "what's your post title?", '', 'f1 my1')
-const date = new form.input('date', 'date of publishing')
+const title = new form.input('title', "what's your post title?", '', 'f1 my1', 'hsize')
+const date = new form.input('date', 'date of publishing', '', '', 'fontsize')
 
 const text = new form.textarea('text', 'what do you want to share? start typing...')
 

@@ -3,13 +3,14 @@ const html = require('choo/html')
 const autofocus = require('dom-autofocus')
 
 module.exports = class Input extends Nanocomponent {
-	constructor(name, placeholder, value, classes) {
+	constructor(name, placeholder, value, classes, size) {
 		super()
 
 		this.name = name
 		this.placeholder = placeholder || ''
 		this.value = value || ''
 		this.classes = classes
+		this.size = size
 	}
 
 	createElement(state, value, focus) {
@@ -27,7 +28,7 @@ module.exports = class Input extends Nanocomponent {
 		}
 
 		function style() {
-			return `font-family: ${state.orkl.config.style.fontfamily};`
+			return `font-family: ${state.orkl.config.style.fontfamily}; font-size: ${state.orkl.config.style[t.size]}px`
 		}
 
 		if (focus) return autofocus(el)
