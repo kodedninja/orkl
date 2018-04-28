@@ -4,11 +4,11 @@
         <description><![CDATA[orkl]]></description>
         <link>/</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 28 Apr 2018 07:25:35 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 28 Apr 2018 07:30:50 GMT</lastBuildDate>
         <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[How to use orkl?]]></title>
-            <description><![CDATA[<p>If you are reading this, then you've probably <a href="https://github.com/kodedninja/orkl#readme">forked the site</a> successfully. This is a short guide on how to use orkl (it's really not hard).</p>
+            <description><![CDATA[<p>If you are reading this, then you've probably <a href="https://github.com/kodedninja/orkl#readme">forked the site</a> successfully. This is a short guide on how to use orkl (it's really not hard). Read through this guide to learn about orkl and click the <em>go to homepage</em> button at the bottom.</p>
 ]]></description>
             <link>/how-to-use-orkl</link>
             <guid isPermaLink="true">/how-to-use-orkl</guid>
