@@ -102,7 +102,7 @@ function orkl () {
 					})
 
 					if (id === dir.length - 1) {
-						if (state.export_content) write_export()
+						if (state.export_content) write_export(true)
 						state.loaded = true
 						emitter.emit(state.events.RENDER)
 					}
@@ -212,7 +212,7 @@ function orkl () {
 			await fs.writefile('/files/' + file.name, file.data)
 		}
 
-		async function write_export() {
+		async function write_export(rss) {
 			var http_data = {}
 			http_data.content = state.orkl.content
 			http_data.config = state.orkl.config
@@ -222,24 +222,26 @@ function orkl () {
 			await fs.writefile('/content.json', JSON.stringify(http_data, null, '\t'))
 
 			// RSS
-			var feed = new RSS({
-				title: state.orkl.config.title,
-				feed_url: '/feed.xml',
-				site_url: '/'
-			})
+			if (rss) {
+				var feed = new RSS({
+					title: state.orkl.config.title,
+					feed_url: '/feed.xml',
+					site_url: '/'
+				})
 
-			http_data.content.forEach(function(state) {
-				if (state.public) {
-					feed.item({
-						title: state.title,
-						description: md.render(excerpt(state.text)),
-						url: '/' + state.url,
-						date: state.date
-					})
-				}
-			})
+				http_data.content.forEach(function(state) {
+					if (state.public) {
+						feed.item({
+							title: state.title,
+							description: md.render(excerpt(state.text)),
+							url: '/' + state.url,
+							date: state.date
+						})
+					}
+				})
 
-			await fs.writefile('/feed.xml', feed.xml({indent: true}))
+				await fs.writefile('/feed.xml', feed.xml({indent: true}))
+			}
 
 			function excerpt(text) {
 				if (text) {

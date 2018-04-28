@@ -20,12 +20,12 @@ function view (state, emit) {
 		`
 	}
 
-	function entry(state) {
+	function entry(ent) {
 		return html`
-			<a href="${state.url}" class="db nbb my2">
-				<a class="dib f1 mb0-5">${state.title}</a>
+			<a href="${ent.url}" class="db nbb my2">
+				<a class="dib f1 mb0-5" style="font-size: ${state.orkl.config.style.hsize}px">${ent.title}</a>
 				<div class="db">
-					${excerpt(state.text)}
+					${excerpt(ent.text)}
 				</div>
 			</a>
 		`
