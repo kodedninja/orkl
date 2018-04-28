@@ -8,7 +8,7 @@ public: true
 ----
 ctime: 1524900259526
 ----
-text: If you are reading this, then you've probably [forked the site](https://github.com/kodedninja/orkl#readme) successfully. This is a short guide on how to use orkl (it's really not hard). Read through this guide to learn about orkl and click the _go to homepage_ button at the bottom.
+text: If you are reading this, then you've probably [forked the site](https://github.com/kodedninja/orkl#readme) successfully. This is a short guide on how to use orkl (it's really not hard). Read through this guide to learn about the functionalities of orkl.
 
 If you have an older Beaker Browser (< version 0.8.0 pre-release-1) this is an important step. Open the ```dat.json``` file of your site and add the ```"fallback_page: "index.html"``` property to the JSON. This will tell Beaker to route every request to the ```index.html```.
 

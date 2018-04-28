@@ -6,7 +6,7 @@ const notfound = require('../components/notfound')
 
 module.exports = wrapper(view)
 
-const title = new form.input('title', "what's your post title?", '', 'f1 my1', 'hsize')
+const title = new form.input('title', "what's your post title?", '', 'f1 mb1', 'hsize')
 const date = new form.input('date', 'date of publishing', '', '', 'fontsize')
 
 const text = new form.textarea('text', 'what do you want to share? start typing...')
@@ -23,11 +23,11 @@ function view (state, emit) {
 
 		return html`
 			<div class="1">
-				<div class="1/2 dib">
+				<div class="1/2 fl mb1 dib">
 					<span class="tcred f6">${state.date_required ? 'required' : ''}</span>
 					${date.render(state, state.entry.date)}
 				</div>
-				<div class="1/2 dib">
+				<div class="1/2 fl dib">
 					${select.render(state, emit)}
 				</div>
 				<div class="1">
