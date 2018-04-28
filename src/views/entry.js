@@ -18,11 +18,11 @@ function view (state, emit) {
 
 		return html`
 			<div>
-				<a class="dib mb1">${state.entry.title}</a>
 				<div class="db">
 					<span class="${state.entry.date ? 'mr1' : ''} tcgrey">${state.entry.date}</span>
 					${modificators()}
 				</div>
+				<a class="dib my1 f1">${state.entry.title}</a>
 				<div class="db 1">
 					${format(state.entry.text)}
 				</div>

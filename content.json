@@ -13,7 +13,7 @@
 		"directory": "content",
 		"style": {
 			"fontfamily": "'Inter UI', helvetica, sans-serif",
-			"fontsize": "14",
+			"fontsize": "15",
 			"background": "#fff",
 			"color": "#000"
 		},

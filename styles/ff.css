@@ -5,7 +5,7 @@
   background: transparent;
 }
 
-html { font-size: 14px; background: white; }
+html { font-size: 15px; background: white; }
 
 body, pre {
    font-family: 'Inter UI', helvetica, sans-serif;
@@ -30,7 +30,7 @@ a:not(.nbb) {
 
 h1, h2, h3, h4, h5 { font-weight: inherit; }
 
-h1, .f1 { font-size: 2.25rem; }
+h1, .f1 { font-size: 1.75rem; }
 h2, .f2 { font-size: 1.5rem; }
 h3, .f3 { font-size: 1.25rem; }
 h4, .f4 { font-size: 1rem; }
@@ -55,11 +55,17 @@ h5, .f5 { font-size: .875rem; }
 .tcwhite, .tcwhite a { color: #fff }
 .tcblack, .tcblack a { color: #000 }
 
+.tctransition { transition: color 0.2s }
+
 .lh1 { line-height: 1.2 }
 
 p, ul, ol {
 	margin: 2rem 0;
 }
+
+p:first-child { margin-top: 0 }
+p:last-child { margin-bottom: 0 }
+
 
 li {
 	margin: 0.5rem 0;
@@ -148,7 +154,8 @@ hr {
 .my2 { margin: 3rem 0 }
 .mt2 { margin-top: 3rem }
 .mb2 { margin-bottom: 3rem }
-.mt3 { margin-top: 4rem }
+.mt3 { margin-top: 4.5rem }
+.mb3 { margin-bottom: 4.5rem }
 .mxa { margin-left: auto; margin-right: auto; }
 
 .mt50 { margin-top: 50% }

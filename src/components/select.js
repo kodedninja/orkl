@@ -16,7 +16,7 @@ module.exports = class Select extends Nanocomponent {
 		const p = state.orkl.current.public
 
 		return html`
-			<a href="#" onclick=${click} class="${!p ? 'tcgrey' : ''} nbb db">${p ? this.t : this.f}</a>
+			<a href="#" onclick=${click} class="${!p ? 'tcgrey' : ''} tctransition nbb db">${p ? this.t : this.f}</a>
 		`
 
 		function click(e) {

@@ -23,7 +23,7 @@ function view (state, emit) {
 	function entry(state) {
 		return html`
 			<a href="${state.url}" class="db nbb my2">
-				<a class="dib mb0-5">${state.title}</a>
+				<a class="dib f1 mb0-5">${state.title}</a>
 				<div class="db">
 					${excerpt(state.text)}
 				</div>
