@@ -9,7 +9,7 @@ module.exports = wrapper(view)
 var today = new Date()
 today = today.getFullYear() + '-' + format_number(today.getMonth() + 1)  + '-' + format_number(today.getDate())
 
-const title = new form.input('title', "what's your post title?", '', 'f1 my1', 'hsize')
+const title = new form.input('title', "what's your post title?", '', 'f1 mb1', 'hsize')
 const date = new form.input('date', 'date of publishing', '', '', 'fontsize')
 
 const text = new form.textarea('text', 'what do you want to share? start typing...')
@@ -25,11 +25,11 @@ function view (state, emit) {
 		return html`
 			<div class="1">
 				<div class="1">
-					<div class="1/2 dib">
+					<div class="1/2 fl dib mb1">
 						<span class="tcred f6">${state.date_required ? 'required' : ''}</span>
 						${date.render(state, today)}
 					</div>
-					<div class="1/2 dib ">
+					<div class="1/2 fl dib">
 						${select.render(state, emit)}
 					</div>
 					<span class="tcred f6">${state.title_required ? 'required' : ''}</span>

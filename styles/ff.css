@@ -141,6 +141,7 @@ hr {
 .py1 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
 .pt1 { padding-top: 1.5rem }
 .pb1 { padding-bottom: 1.5rem }
+.pr1 { padding-right: 1.5rem }
 
 .m0 { margin: 0 }
 .mx0-5 { margin: 0 0.75rem }
@@ -216,7 +217,6 @@ input[type="range"] {
   margin: 11.5px 0;
   margin-top: 5px;
   overflow: visible;
-  flex-grow: 1;
 }
 
 input[type="range"]:focus {
@@ -227,14 +227,12 @@ input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 1px;
   cursor: pointer;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
   background: #000000;
   border-radius: 0px;
-  border: 0px solid #010101;
+  border: none;
 }
 
 input[type="range"]::-webkit-slider-thumb {
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(13, 13, 13, 0);
   border: 1px solid #000000;
   height: 18px;
   width: 18px;
@@ -243,10 +241,6 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: pointer;
   -webkit-appearance: none;
   margin-top: -9px;
-}
-
-input[type="range"]:focus::-webkit-slider-runnable-track {
-  background: #171717;
 }
 
 select {
