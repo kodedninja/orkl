@@ -45,7 +45,7 @@ That's all. I said it won't be complicated. You can delete this entry if you wan
 
 <div class="tac my2"><a href="/" class="button">go to homepage</a></div>
 
-[Source](https://github.com/kodedninja/orkl) | [Typeface](https://rsms.me/inter) | Version 0.2.1
+[Source](https://github.com/kodedninja/orkl) | [Typeface](https://rsms.me/inter) | Version 0.4.0
 
 ---
 1. According to [Wikipedia](https://en.wikipedia.org/wiki/Markdown).

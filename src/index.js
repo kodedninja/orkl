@@ -11,6 +11,8 @@ app.use((state, emitter) => {
 	})
 
 	emitter.on('navigate', () => {
+		document.body.scrollTop = 0
+		
 		state.title_required = false
 		state.date_required = false
 	})

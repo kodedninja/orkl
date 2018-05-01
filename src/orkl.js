@@ -44,10 +44,10 @@ function orkl () {
 		}
 
 		const default_style = {
-			fontfamily: "'Inter UI', helvetica, sans-serif",
-			fontsize: 14,
-			'background': '#fff',
-			'color': '#000'
+			fontfamily: "'Inter UI', sans-serif",
+			fontsize: 15,
+			background: '#fff',
+			color: '#000'
 		}
 
 		emitter.on('navigation', () => {
@@ -108,7 +108,7 @@ function orkl () {
 						if (state.orkl.content.length == 1) {
 							if (state.orkl.content[0].url == 'how-to-use-orkl') {
 								state.welcome = true
-								if (!state.loaded && state.route == '/') emitter.emit('replaceState', "/how-to-use-orkl")
+								if (!state.loaded && state.orkl.dat.isOwner && state.route == '/') emitter.emit('replaceState', "/how-to-use-orkl")
 							}
 						} else {
 							state.welcome = false
