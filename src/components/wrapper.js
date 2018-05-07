@@ -19,7 +19,7 @@ function view(body) {
 			<body class="1 db" style="${apply_style()}">
 				${customize(state, emit)}
 				<div class="db p2 2/3 m-1 mxa mw1400 pr">
-					${state.orkl.dat.isOwner ? html`<a href="#" class="customize button" onclick="${customize_click}">${!state.customize ? 'customize' : 'close'}</a>` : ''}
+					${(state.orkl.dat.isOwner && state.route != '/new' && state.route != '/:entry/edit') ? html`<a href="#" class="customize button" onclick="${customize_click}">${!state.customize ? 'customize' : 'close'}</a>` : ''}
 					<div class="db mb2">
 						<a href="/" class="nbb">${state.orkl.config ? state.orkl.config.title : ''}</a>
 						${new_nav()}

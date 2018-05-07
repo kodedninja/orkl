@@ -39,7 +39,7 @@ function customize(state, emit) {
 					<div class="1 dib">
 						<div class="db 1 mb0-5">
 							<span class="mr1 tcgrey">text size: </span>
-							<input type="range" oninput="${change_font}" onchange="${change_font}" class="2/3" min="15" max="26" step="1" value="${style.fontsize}">
+							<input type="range" oninput="${change_font}" onchange="${change_font}" class="2/3" min="13" max="26" step="1" value="${style.fontsize}">
 							<span class="ml1">${style.fontsize}px</span>
 						</div>
 						<div class="db 1 mb0-5">
