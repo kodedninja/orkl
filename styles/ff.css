@@ -243,6 +243,10 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: -9px;
 }
 
+input[type="color"] {
+	cursor: pointer;
+}
+
 select {
 	background: transparent;
 	padding: 10px;
@@ -272,7 +276,7 @@ select {
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 100px;
-	padding: 0.4em 0.8em
+	padding: 0.4em 0.8em;
 }
 
 /* Media query customs */

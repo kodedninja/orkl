@@ -48,13 +48,13 @@ function customize(state, emit) {
 								${fonts.map(font)}
 							</select>
 						</div>
-						<div class="db 1 mb0-5">
-							<span class="mr1 tcgrey">background (beta): </span>
-							<input type="text" placeholder="#fff" onkeyup="${bg_change}" value="${style.background}">
+						<div class="dib 1/2">
+							<span class="mr1 tcgrey">background color: </span>
+							<input type="color" onkeyup="${bg_change}" onchange="${bg_change}" value="${style.background}">
 						</div>
-						<div class="db 1">
-							<span class="mr1 tcgrey">text color (beta): </span>
-							<input type="text" placeholder="#000" onkeyup="${color_change}" value="${style.color}">
+						<div class="dib 1/2">
+							<span class="mr1 tcgrey">text color: </span>
+							<input type="color" onkeyup="${color_change}" onchange="${color_change}" value="${style.color}">
 						</div>
 					</div>
 				</div>

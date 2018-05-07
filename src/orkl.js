@@ -46,8 +46,8 @@ function orkl () {
 		const default_style = {
 			fontfamily: "'Inter UI', sans-serif",
 			fontsize: 15,
-			background: '#fff',
-			color: '#000'
+			background: '#ffffff',
+			color: '#000000'
 		}
 
 		emitter.on('navigation', () => {
