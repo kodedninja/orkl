@@ -23,7 +23,7 @@ You can also include images. Simply drag-and-drop the image into the editor and 
 
 ### Publishing
 
-Next to the date field there's a "published/drat" button, which represents the current status of the entry. Draft entries can only be seen by you.
+Next to the date field there's a "published/draft" button, which represents the current status of the entry. Draft entries can only be seen by you.
 
 ## Modifying entries
 If you navigate to one of the entries you can see that at the top right corner there's an "edit" button. If you click on that it'll navigate to the editor and you already know how to use that.
