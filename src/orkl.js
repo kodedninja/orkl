@@ -14,7 +14,7 @@ module.exports = orkl
 function orkl () {
 	return function plugin(state, emitter) {
 		try {
-			var archive = new DatArchive(window.location.origin + '/')
+			var archive = new DatArchive(window.location.origin.replace(/^https?/, 'dat') + '/')
 			var fs = makeDatFs(archive)
 			state.p2p = true
 		} catch (err) {
