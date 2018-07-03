@@ -11,6 +11,7 @@ function view (state, emit) {
 
 		return html`
 			<div class="db 1">
+				${entries()}
 				${state.orkl.content.filter((e) => e.public || (state.orkl.dat.isOwner && !e.public)).map(entry)}
 			</div>
 		`
@@ -18,6 +19,14 @@ function view (state, emit) {
 		return html`
 			${no_archive(state, emit)}
 		`
+	}
+
+	function entries() {
+		var es = state.orkl.content.filter((e) => e.public || (state.orkl.dat.isOwner && !e.public))
+		if (es.length == 0) return html`
+			<div class="tcgrey mt2 tac">The first entry still awaits its writer...</div>
+		`
+		return es.map(entry)
 	}
 
 	function entry(ent) {
