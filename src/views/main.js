@@ -12,7 +12,6 @@ function view (state, emit) {
 		return html`
 			<div class="db 1">
 				${entries()}
-				${state.orkl.content.filter((e) => e.public || (state.orkl.dat.isOwner && !e.public)).map(entry)}
 			</div>
 		`
 	} else {
