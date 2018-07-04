@@ -73,7 +73,7 @@ function orkl () {
 			state.orkl.config = JSON.parse(config)
 			if (!state.orkl.config.style) state.orkl.config.style = default_style
 			state.orkl.dat = await archive.getInfo()
-			state.orkl.config.title = state.orkl.config.title || state.orkl.dat.title || 'orkl'
+			state.orkl.config.title = state.orkl.dat.title || state.orkl.config.title || 'orkl'
 
 			if (!state.orkl.dat.isOwner && (state.route == '/new' || state.route == '/:entry/edit')) emitter.emit('replaceState', '/')
 
@@ -135,6 +135,7 @@ function orkl () {
 						var http_data = JSON.parse(res.body)
 						state.orkl.dat = {isOwner: false}
 						state.orkl.config = http_data.config
+						state.orkl.config.title = state.orkl.config.title || 'orkl'
 						if (!state.orkl.config.style) state.orkl.config.style = default_style
 						state.orkl.content = http_data.content
 
