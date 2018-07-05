@@ -19,7 +19,7 @@ Navigate to the [homepage](/) of the site and click the [write your first entry]
 
 Welcome to the editor. You can enter a title, specify a date and write beautiful text. That's all. To style your text content you can use [Markdown](https://daringfireball.net/projects/markdown/) ([cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)), a common "lightweight markup language with plain text formatting syntax" ^1^.
 
-You can also include images. Simply drag-and-drop the image into the editor and it'll be uploaded and inserted at the cursor's current position.
+You can also include images. Simply drag-and-drop the image into the editor and it'll be uploaded and inserted at the cursor's current position. You can group images with a custom syntax. Add them between the `{images}` and `{/images}` tags with an empty line between everything (empty line after the opening and closing tags and also between the images).
 
 ### Publishing
 
