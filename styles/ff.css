@@ -267,9 +267,10 @@ select {
 	transform: rotate(-90deg);
 }
 
-.imgs-auto > div { padding: 0 0.5rem; }
-.imgs-auto > div:first-child { padding-left: 0; }
-.imgs-auto > div:last-child { padding-right: 0; }
+.imgs-auto > figure { padding: 0 0.5rem; }
+.imgs-auto > figure:first-child { padding-left: 0; }
+.imgs-auto > figure:last-child { padding-right: 0; }
+figcaption { color: #999; padding-top: 3px; }
 
 .blink { animation: blinker 2s linear infinite; }
 

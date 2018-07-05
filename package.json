@@ -25,6 +25,7 @@
     "folderify": "^1.2.1",
     "forkup": "^0.2.0",
     "markdown-it": "^8.4.1",
+    "markdown-it-implicit-figures": "^0.9.0",
     "markdown-it-sup": "^1.0.0",
     "medium-zoom": "^0.4.0",
     "monoimage": "^0.1.2",

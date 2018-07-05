@@ -1,11 +1,15 @@
 var html = require('choo/html')
 var MarkdownIt = require('markdown-it')
+var implicitFigures = require('markdown-it-implicit-figures');
 var md = new MarkdownIt({
 	breaks: true,
 	html: true
 })
 
 md.use(require('markdown-it-sup'))
+md.use(implicitFigures, {
+	figcaption: true
+});
 
 module.exports = format
 
