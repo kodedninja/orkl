@@ -93,6 +93,7 @@ hr {
 
 .db { display: block; }
 .dib { display: inline-block; }
+.fx { display: flex; flex-direction: row; }
 .dn { display: none; }
 
 .pst { position: sticky; position: -webkit-sticky; }
@@ -265,6 +266,10 @@ select {
 	transform-origin: 100% 100%;
 	transform: rotate(-90deg);
 }
+
+.imgs-auto > div { padding: 0 0.5rem; }
+.imgs-auto > div:first-child { padding-left: 0; }
+.imgs-auto > div:last-child { padding-right: 0; }
 
 .blink { animation: blinker 2s linear infinite; }
 

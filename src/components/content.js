@@ -18,7 +18,13 @@ module.exports = class Content extends Component {
 	      .forEach(function (container) {
 	        unwrap(container)
 	      })
-	    var images = [...element.querySelectorAll('.imgs-auto img')]
+		var groups = element.querySelectorAll('.imgs-auto').forEach(function (group) {
+			group.classList = 'fx 1 pr imgs-auto'
+			for (var i = 0; i < group.children.length; i++) {
+				group.children[i].style.flex = '1'
+			}
+		})
+	    var images = [...element.querySelectorAll('img')]
 	      .forEach(function (image) {
 	        var parent = image.parentNode
 	        var source = image.getAttribute('src')
