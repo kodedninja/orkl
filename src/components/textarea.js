@@ -72,7 +72,7 @@ module.exports = class Textarea extends Nanocomponent {
 			var result = e.target.result
 			t.emit('file', {name: sanitize(file.name), data: result})
 
-			type_in_textarea(t, '![' + file.name + '](/files/' + sanitize(file.name) + ')')
+			type_in_textarea(t, '![](/files/' + sanitize(file.name) + ')')
 			t.onkeyup(e)
 
 			i++
