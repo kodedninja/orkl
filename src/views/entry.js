@@ -2,6 +2,7 @@ const html = require('choo/html')
 const wrapper = require('../components/wrapper')
 const format = require('../components/format')
 const notfound = require('../components/notfound')
+const Content = require('../components/content')
 
 const Delete = require('../components/delete')
 const delete_button = new Delete()
@@ -16,6 +17,8 @@ function view (state, emit) {
 
 		emit(state.events.DOMTITLECHANGE, state.entry.title + ' - ' + state.orkl.config.title)
 
+		var content = new Content()
+
 		return html`
 			<div>
 				<div class="db">
@@ -24,7 +27,7 @@ function view (state, emit) {
 				</div>
 				<a class="dib my1 f1" style="font-size: ${state.orkl.config.style.hsize}px">${state.entry.title}</a>
 				<div class="db 1">
-					${format(state.entry.text)}
+					${content.render(state.entry)}
 				</div>
 			</div>
 		`

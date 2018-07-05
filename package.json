@@ -26,6 +26,8 @@
     "forkup": "^0.2.0",
     "markdown-it": "^8.4.1",
     "markdown-it-sup": "^1.0.0",
+    "medium-zoom": "^0.4.0",
+    "monoimage": "^0.1.2",
     "nanocomponent": "^6.5.1",
     "rss": "^1.2.2",
     "smarkt": "0.0.1",
