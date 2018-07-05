@@ -121,7 +121,7 @@ hr {
 .\35 \2f 6{width:83.333%}
 .auto { width: auto; }
 
-.mw1400 { max-width: 1400px }
+.mw { max-width: 1100px }
 
 .ba { border-style: solid; border-width: 1px; }
 .bt { border-top-style: solid; border-top-width: 1px; }
