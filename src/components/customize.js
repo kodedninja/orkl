@@ -8,6 +8,18 @@ const fonts = [
 		value: "'Inter UI', sans-serif"
 	},
 	{
+		name: 'Authentic Sans',
+		value: "'Authentic Sans', sans-serif"
+	},
+	{
+		name: 'Lunchtype22 L',
+		value: "'Lunchtype22 L', sans-serif"
+	},
+	{
+		name: 'Lunchtype22 M',
+		value: "'Lunchtype22 M', sans-serif"
+	},
+	{
 		name: 'Arial',
 		value: "'arial', sans-serif"
 	},
