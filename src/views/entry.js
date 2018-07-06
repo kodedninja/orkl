@@ -22,7 +22,7 @@ function view (state, emit) {
 		return html`
 			<div>
 				<div class="db">
-					<span class="${state.entry.date ? 'mr1' : ''} tcgrey">${state.entry.date}</span>
+					<span class="${state.entry.date ? 'mr1' : ''} tcgrey">${humanify(state.entry.date)}</span>
 					${modificators()}
 				</div>
 				<a class="dib my1 f1" style="font-size: ${state.orkl.config.style.hsize}px">${state.entry.title}</a>
@@ -39,6 +39,13 @@ function view (state, emit) {
 				</div>
 			`
 			return null
+		}
+
+		function humanify(raw) {
+			var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+			var date = new Date(raw)
+			return monthNames[date.getMonth()] + '. ' + date.getDate() + ', ' + date.getFullYear()
 		}
 	}
 
