@@ -1,12 +1,12 @@
-# orkl
-Super simple peer-to-peer blogging site based on [Beaker](https://beakerbrowser.com).
+##### orkl
+###### Super simple peer-to-peer blogging site based on [Beaker](https://beakerbrowser.com).
 
-## Why?
+#### Why?
 I wanted to build a peer-to-peer only blog; kind of like the p2p child of Svbtle and Telegra.ph. Fell in love with the idea of a site, which feels the same for the writer and the reader. The only difference is that the writer can change things and the reader can't. Thanks to [Dat](https://datproject.org/), we can easily decide if a computer is the owner or not of a site.
 
 orkl is also 100% dynamic, so it's basically just a bunch of ```txt``` files (using [smarkt](https://github.com/jondashkyle/smarkt)) = no site generation or building.
 
-## Usage
+#### Usage
 The magic of Beaker Browser is the possibility to fork a site. To get started you can fork any orkl site, but for the sake of simplicity we will use an empty site I've made.
 
 - Download [Beaker Browser](https://beakerbrowser.com)
@@ -16,7 +16,7 @@ The magic of Beaker Browser is the possibility to fork a site. To get started yo
 - Edit the site's dat.json, adding `"fallback_page": "index.html"` (from Beaker 0.8 prerelease.1 this is not needed)
 - Read the "How to use orkl?" entry
 
-### ```config.json```
+##### ```config.json```
 ```
 {
   "directory": <directory of the content - required>,
@@ -24,7 +24,7 @@ The magic of Beaker Browser is the possibility to fork a site. To get started yo
 }
 ```
 
-## Development
+#### Development
 Make a new site in Beaker then put the source code into it's directory. Run:
 ```
 npm install
