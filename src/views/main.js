@@ -32,6 +32,7 @@ function view (state, emit) {
 		return html`
 			<a href="${ent.url}" class="db nbb my2">
 				<a class="dib f1 mb0-5" style="font-size: ${state.orkl.config.style.hsize}px">${ent.title}</a>
+				<span class="tcgrey f5 mx1 dib">${!ent.public ? 'draft' : ''}</span>
 				<div class="db">
 					${excerpt(ent.text)}
 				</div>
