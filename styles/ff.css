@@ -63,8 +63,8 @@ p, ul, ol {
 	margin: 2rem 0;
 }
 
-p:first-child { margin-top: 0 }
-p:last-child { margin-bottom: 0 }
+p:first-child, ul:first-child, ol:first-child { margin-top: 0 }
+p:last-child, ul:first-child, ol:first-child { margin-bottom: 0 }
 
 
 li {
@@ -267,10 +267,14 @@ select {
 	transform: rotate(-90deg);
 }
 
+.imgs-auto { margin: 1rem 0; }
+.imgs-auto:first-child { margin-top: 0; }
+.imgs-auto:last-child { margin-bottom: 0; }
+
 .imgs-auto > figure { padding: 0 0.5rem; }
 .imgs-auto > figure:first-child { padding-left: 0; }
 .imgs-auto > figure:last-child { padding-right: 0; }
-figcaption { color: #999; padding-top: 3px; }
+figcaption { color: #999; padding-top: 3px; font-size: 0.9rem; }
 
 .blink { animation: blinker 2s linear infinite; }
 
