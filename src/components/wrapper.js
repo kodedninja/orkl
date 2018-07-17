@@ -8,7 +8,7 @@ var k = false
 
 function view(body) {
 	return function(state, emit) {
-		if (!state.loaded) return html`<body><div class="loading"></div></body>`
+		if (!state.loaded) return html`<main><div class="loading"></div></main>`
 
 		if (!k) {
 			document.addEventListener('keydown', keydown)
