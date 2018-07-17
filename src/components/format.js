@@ -15,7 +15,7 @@ module.exports = format
 
 function format (str) {
   	str = str || ''
-	str = str.replace(/\{images\}\n/g, '<div class="imgs-auto">').replace(/\n\{\/images\}/g, '</div>')
+	str = str.replace(/\{images\}\n/g, '<div class="imgs-auto">\n').replace(/\n\{\/images\}/g, '\n</div>')
   	return rawCreateElement(md.render(str))
 }
 
