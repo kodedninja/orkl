@@ -2,6 +2,8 @@ const Nanocomponent = require('nanocomponent')
 const html = require('choo/html')
 const autofocus = require('dom-autofocus')
 
+var wipTimeout = null
+
 module.exports = class Textarea extends Nanocomponent {
 	constructor(name, placeholder, value) {
 		super()
@@ -32,6 +34,11 @@ module.exports = class Textarea extends Nanocomponent {
 			if (t.element.offsetHeight < t.element.scrollHeight) {
 				t.element.style.height = t.element.scrollHeight + 'px'
 			}
+
+			if (wipTimeout) clearTimeout(wipTimeout)
+			wipTimeout = setTimeout(function() {
+				localStorage.setItem('text', t.value)
+			}, 4000)
 		}
 
 		function style() {

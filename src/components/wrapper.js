@@ -8,7 +8,7 @@ var k = false
 
 function view(body) {
 	return function(state, emit) {
-		if (!state.loaded) return html`<main><div class="loading"></div></main>`
+		if (!state.loaded) return html`<body><div class="loading"></div></body>`
 
 		if (!k) {
 			document.addEventListener('keydown', keydown)
@@ -19,9 +19,9 @@ function view(body) {
 			<body class="1 db" style="${apply_style()}">
 				${customize(state, emit)}
 				<div class="db p2 2/3 m-1 mxa mw pr">
-					${(state.orkl.dat.isOwner && state.route != '/new' && state.route != '/:entry/edit') ? html`<a href="#" class="customize button" onclick="${customize_click}">${!state.customize ? 'customize' : 'close'}</a>` : ''}
+					${customize_button()}
 					<div class="db mb2 1">
-						<a href="/" class="nbb">${state.orkl.config ? state.orkl.config.title : 'orkl'}</a>
+						<a href="/" class="nbb" onclick="${onhome}">${title()}</a>
 						${new_nav()}
 					</div>
 					${body(state, emit)}
@@ -29,6 +29,14 @@ function view(body) {
 				</div>
 			</body>
 		`
+
+		function title() {
+			return state.orkl.config ? state.orkl.config.title : 'orkl'
+		}
+
+		function customize_button() {
+			return (state.orkl.dat.isOwner && state.route != '/new' && state.route != '/:entry/edit') ? html`<a href="#" class="customize button" onclick="${customize_click}">${!state.customize ? 'customize' : 'close'}</a>` : ''
+		}
 
 		function customize_click(e) {
 			e.preventDefault()
@@ -92,8 +100,17 @@ function view(body) {
 				state.date_required = false
 			}
 
-			if (do_save) emit('saveContent')
-			else emit('re')
+			if (do_save) {
+				emit('saveContent')
+				localStorage.removeItem('text')
+			} else {
+				emit('re')
+			}
+		}
+
+		function onhome() {
+			// if the home button is pressed we presume that it was intentional
+			localStorage.removeItem('text')
 		}
 
 		function apply_style() {

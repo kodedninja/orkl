@@ -11,36 +11,34 @@ today = today.getFullYear() + '-' + format_number(today.getMonth() + 1)  + '-' +
 
 const title = new form.input('title', "what's your post title?", '', 'f1 mb1', 'hsize')
 const date = new form.input('date', 'date of publishing', '', '', 'fontsize')
-
 const text = new form.textarea('text', 'what do you want to share? start typing...')
-
 const select = new form.select('public', 'published', 'draft')
 
 function view (state, emit) {
-	if (state.orkl.dat.isOwner) {
-		state.orkl.current.ctime = null
-		state.orkl.current.url = null
-		state.orkl.current.public = false
+	if (!state.orkl.dat.isOwner) return notfound()
 
-		return html`
+	state.orkl.current.ctime = null
+	state.orkl.current.url = null
+	state.orkl.current.public = false
+
+	const wipText = localStorage.getItem('text') || ''
+
+	return html`
+		<div class="1">
 			<div class="1">
-				<div class="1">
-					<div class="1/2 fl dib mb1">
-						<span class="tcred f6">${state.date_required ? 'required' : ''}</span>
-						${date.render(state, today)}
-					</div>
-					<div class="1/2 fl dib">
-						${select.render(state, emit)}
-					</div>
-					<span class="tcred f6">${state.title_required ? 'required' : ''}</span>
-					${title.render(state, '', true)}
+				<div class="1/2 fl dib mb1">
+					<span class="tcred f6">${state.date_required ? 'required' : ''}</span>
+					${date.render(state, today)}
 				</div>
-				${text.render(state, emit, '')}
+				<div class="1/2 fl dib">
+					${select.render(state, emit)}
+				</div>
+				<span class="tcred f6">${state.title_required ? 'required' : ''}</span>
+				${title.render(state, '', true)}
 			</div>
-		`
-	}
-
-	return notfound()
+			${text.render(state, emit, wipText)}
+		</div>
+	`
 }
 
 function format_number(a) {
