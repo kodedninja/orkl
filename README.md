@@ -20,7 +20,9 @@ The magic of Beaker Browser is the possibility to fork a site. To get started yo
 ```
 {
   "directory": <directory of the content - required>,
-  "title": <site title (overrides title in dat.json>
+  "title": <site title (overrides title in dat.json>,
+  "style": <style object, set automatically>,
+  "nohttp": <if true, no content is rendered if accessed through http>
 }
 ```
 

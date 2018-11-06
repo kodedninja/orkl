@@ -9,6 +9,8 @@ var k = false
 function view(body) {
 	return function(state, emit) {
 		if (!state.loaded) return html`<body><div class="loading"></div></body>`
+		// if http isn't allowed
+		if (state.orkl.config.nohttp && !state.p2p) body = require('../views/no_archive')
 
 		if (!k) {
 			document.addEventListener('keydown', keydown)
