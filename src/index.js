@@ -2,6 +2,9 @@ const choo = require('choo')
 const orkl = require('./orkl')
 const html = require('choo/html')
 const update = require('forkup')
+const css = require('sheetify')
+
+css('./styles/ff.css')
 
 const app = choo()
 
@@ -12,7 +15,7 @@ app.use((state, emitter) => {
 
 	emitter.on('navigate', () => {
 		document.body.scrollTop = 0
-		
+
 		state.title_required = false
 		state.date_required = false
 	})

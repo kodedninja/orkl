@@ -4,8 +4,8 @@
   "description": "Super simple peer-to-peer blogging site",
   "main": "src/index.js",
   "scripts": {
-    "start": "watchify src/index.js -o bundle.js",
-    "build": "browserify src/index.js -o bundle.js"
+    "start": "watchify src/index.js -t sheetify -t yo-yoify -t es2040 -o bundle.js",
+    "build": "browserify src/index.js -t sheetify -t yo-yoify -y es2040 -o bundle.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,6 @@
   "homepage": "https://github.com/kodedninja/orkl#readme",
   "dependencies": {
     "@sindresorhus/slugify": "^0.2.0",
-    "browserify": "^16.1.1",
     "choo": "^6.6.1",
     "dom-autofocus": "^1.0.1",
     "folderify": "^1.2.1",
@@ -31,8 +30,8 @@
     "monoimage": "^0.1.2",
     "nanocomponent": "^6.5.1",
     "rss": "^1.2.2",
+    "sheetify": "^7.3.3",
     "smarkt": "0.0.1",
-    "watchify": "^3.11.0",
     "xhr": "^2.4.1"
   },
   "update": {
@@ -41,5 +40,11 @@
       "/bundle.js",
       "/styles/ff.css"
     ]
+  },
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "es2040": "^1.2.6",
+    "watchify": "^3.11.0",
+    "yo-yoify": "^4.3.0"
   }
 }
